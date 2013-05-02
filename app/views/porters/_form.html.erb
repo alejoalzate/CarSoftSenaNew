@@ -1,0 +1,12 @@
+<%= simple_form_for @porter, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :name %>
+  <%= f.input :surname %>
+  <%= f.input :address %>
+  <%= f.input :phone %>
+  <%= f.input :turn_id %>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                porters_path, :class => 'btn' %>
+  </div>
+<% end %>

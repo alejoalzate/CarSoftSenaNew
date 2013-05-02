@@ -1,0 +1,22 @@
+<%= simple_form_for @user, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :name %>
+  <%= f.input :surname %>
+  <%= f.input :finger_print %>
+  <%= f.input :male %>
+  <%= f.input :female %>
+  <%= f.input :identification %>
+  <%= f.input :key %>
+  <%= f.input :email %>
+  <%= f.input :address_residence %>
+  <%= f.input :phone %>
+  <%= f.input :movil %>
+  <%= f.input :document_id %>
+  <%= f.input :rh_id %>
+  <%= f.input :role_id %>
+  <%= f.input :type_id %>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                users_path, :class => 'btn' %>
+  </div>
+<% end %>

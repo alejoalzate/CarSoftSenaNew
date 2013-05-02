@@ -1,0 +1,15 @@
+<%= simple_form_for @team, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :type_team %>
+  <%= f.input :name %>
+  <%= f.input :serial %>
+  <%= f.input :mouse %>
+  <%= f.input :charger %>
+  <%= f.input :color %>
+  <%= f.input :porter_id %>
+  <%= f.input :user_id %>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                teams_path, :class => 'btn' %>
+  </div>
+<% end %>

@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  surname: MyString
+  finger_print: MyString
+  male: false
+  female: false
+  identification: MyString
+  key: MyString
+  email: MyString
+  address_residence: MyString
+  phone: MyString
+  movil: MyString
+  document: 
+  rh: 
+  role: 
+  type: 
+
+two:
+  name: MyString
+  surname: MyString
+  finger_print: MyString
+  male: false
+  female: false
+  identification: MyString
+  key: MyString
+  email: MyString
+  address_residence: MyString
+  phone: MyString
+  movil: MyString
+  document: 
+  rh: 
+  role: 
+  type: 

@@ -1,4 +1,85 @@
 Carsoft::Application.routes.draw do
+  resources :vehicles
+
+
+  resources :users
+
+
+  resources :teams
+
+
+  resources :format_surveys
+
+
+  resources :results
+
+
+  resources :answers
+
+
+  resources :modify_users
+
+
+  resources :center_programs
+
+
+  resources :surveys
+
+
+  resources :records
+
+
+  resources :materials
+
+
+  resources :parkings
+
+
+  resources :sheets
+
+
+  resources :porters
+
+
+  resources :centers
+
+
+  resources :programs
+
+
+  resources :categories
+
+
+  resources :questions
+
+
+  resources :rols
+
+
+  resources :type_users
+
+
+  resources :type_vehicles
+
+
+  resources :areas
+
+
+  resources :codes
+
+
+  resources :turns
+
+
+  resources :rhs
+
+
+  resources :documents
+
+
+  resources :type_materials
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
