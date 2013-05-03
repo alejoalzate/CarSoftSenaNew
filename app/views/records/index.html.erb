@@ -17,6 +17,7 @@
       <th><%= model_class.human_attribute_name(:porter_id) %></th>
       <th><%= model_class.human_attribute_name(:material_id) %></th>
       <th><%= model_class.human_attribute_name(:user_id) %></th>
+      <th><%= model_class.human_attribute_name(:team_id) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -36,6 +37,7 @@
         <td><%= record.porter_id %></td>
         <td><%= record.material_id %></td>
         <td><%= record.user_id %></td>
+        <td><%= record.team_id %></td>
         <td><%=l record.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),

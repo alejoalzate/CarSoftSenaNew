@@ -1,4 +1,7 @@
 Carsoft::Application.routes.draw do
+  resources :records
+
+
   resources :vehicles
 
 
@@ -24,9 +27,6 @@ Carsoft::Application.routes.draw do
 
 
   resources :surveys
-
-
-  resources :records
 
 
   resources :materials

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130502154719) do
+ActiveRecord::Schema.define(:version => 20130503130709) do
 
   create_table "answers", :force => true do |t|
     t.string   "answer"
@@ -165,6 +165,7 @@ ActiveRecord::Schema.define(:version => 20130502154719) do
     t.integer  "porter_id"
     t.integer  "material_id"
     t.integer  "user_id"
+    t.integer  "team_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
@@ -172,6 +173,7 @@ ActiveRecord::Schema.define(:version => 20130502154719) do
   add_index "records", ["center_id"], :name => "index_records_on_center_id"
   add_index "records", ["material_id"], :name => "index_records_on_material_id"
   add_index "records", ["porter_id"], :name => "index_records_on_porter_id"
+  add_index "records", ["team_id"], :name => "index_records_on_team_id"
   add_index "records", ["user_id"], :name => "index_records_on_user_id"
   add_index "records", ["vehicle_id"], :name => "index_records_on_vehicle_id"
 

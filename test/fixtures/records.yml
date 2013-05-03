@@ -1,8 +1,8 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  date: 2013-05-02
-  time: 2013-05-02 09:38:07
+  date: 2013-05-03
+  time: 2013-05-03 08:07:09
   amount: 1
   movements: false
   destination: MyString
@@ -12,10 +12,11 @@ one:
   porter: 
   material: 
   user: 
+  team: 
 
 two:
-  date: 2013-05-02
-  time: 2013-05-02 09:38:07
+  date: 2013-05-03
+  time: 2013-05-03 08:07:09
   amount: 1
   movements: false
   destination: MyString
@@ -25,3 +26,4 @@ two:
   porter: 
   material: 
   user: 
+  team: 
