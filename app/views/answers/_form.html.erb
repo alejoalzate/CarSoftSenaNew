@@ -1,14 +1,19 @@
-<%= simple_form_for @answer, :html => { :class => 'form-horizontal' } do |f| %>
-	
-	<%= f.error_notification %>
-	<%= display_base_errors @answer %>
-
-  	<%= f.input :answer %>
-  	<%= f.input :letter %>
-  	<%= f.input :question_id %>
-  	<div class="form-actions">
-    	<%= f.button :submit, :class => 'btn-primary' %>
-    	<%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                answers_path, :class => 'btn' %>
+<%= simple_form_for(@answer, :html => { :class => 'form-horizontal' }, :remote => true) do |f| %>
+    <%= f.error_notification %>
+    <%= display_base_errors @answer %>
+    <p>
+  		<%= f.input :answer %>
+    </p>
+    <p>
+    	<%= f.label :question_id  %>
+    	<%= f.collection_select :question_id , Question.all, :id, :score %>
+  	</p>
+  	<p>
+        <%= f.input :letter %>
+  	</p>
+  	
+    <div class="form-actions">
+	    <%= f.submit "guardar", :class => 'btn btn-primary' %>
+	    <%= link_to 'Atras', answers_path, :class => 'btn btn-small' %>
   	</div>
 <% end %>

@@ -1,0 +1,29 @@
+<%- model_class = FormatSurvey  -%>
+	<div class="page-header">
+  		<h1>Centros</h1>
+		<table class="table table-bordered table-hover" >
+	    	<caption>
+	    		<h3>Informacion</h3>
+	    	</caption>
+	    	<thead>
+	    		<tr class="success">
+	    			<th>Id</th>
+	    			<th>Nombres</th>
+	    			<th>Usuarios</th>
+	    			<th>Estudios</th>
+	    			<th>Repuestas</th>
+	    			<th>Preguntas</th>
+	    		</tr>
+	    	</thead>
+	    	<tbody>
+	    		<tr class="success">
+				    <td><p><%= @format_survey.id %></p></td>
+				    <td><p><%= @format_survey.name %></p></td>
+				    <td><p><%= @format_survey.user_id %></p></td>
+				    <td><p><%= @format_survey.survey_id %></p></td>
+				    <td><p><%= @format_survey.answer_id %></p></td>	
+				    <td><p><%= @format_survey.question_id %></p></td>			    
+	    		</tr>
+	    	</tbody>
+	    </table>
+	</div>

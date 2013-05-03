@@ -1,0 +1,1 @@
+$("table tr#document_<%= @document.id %>").remove();

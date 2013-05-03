@@ -1,40 +1,24 @@
 <%- model_class = FormatSurvey -%>
-<div class="page-header">
-  <h1>Formatos Encuestas</h1>
-</div>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>id</th>
-      <th>name</th>
-      <th>user_id</th>
-      <th>survey_id</th>
-      <th>answer_id</th>
-      <th>question_id</th>
-      <th>created_at</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @format_surveys.each do |format_survey| %>
-      <tr>
-        <td><%= link_to format_survey.id, format_survey_path(format_survey) %></td>
-        <td><%= format_survey.name %></td>
-        <td><%= format_survey.user_id %></td>
-        <td><%= format_survey.survey_id %></td>
-        <td><%= format_survey.answer_id %></td>
-        <td><%= format_survey.question_id %></td>
-        <td><%=l format_survey.created_at %></td>
-        <td>
-          <%= link_to 'Editar', edit_format_survey_path(format_survey), :class => 'btn btn-mini' %>
-          <%= link_to 'Eliminar', format_survey_path(format_survey),
-                      :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-mini btn-danger' %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<%= link_to 'Nuevo Formato Encuesta', new_format_survey_path, :class => 'btn btn-primary' %>
+  <div class="page-header">
+    <h1>Formato de Encuestas</h1>
+  </div>
+    <table class="table table-striped table-bordered table-condensed">
+      <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombres</th>
+            <th>Usuarios</th>
+            <th>Estudios</th>
+            <th>Repuestas</th>
+            <th>Preguntas</th>
+        </tr>
+      </thead>
+      <tbody>
+       <%= render @format_surveys %>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td><%= link_to image_tag('nuevo.png', :tile  => "Mostrar Equipos"),  new_format_survey_path,  :remote => true %></td>
+        </tr>
+      </tfoot>
+    </table>

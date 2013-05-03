@@ -1,40 +1,24 @@
 <%- model_class = Parking -%>
-<div class="page-header">
-  <h1>Estacionamientos</h1>
-</div>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>id</th>
-      <th>space_avaible</th>
-      <th>location</th>
-      <th>area_id</th>
-      <th>vehicle_id</th>
-      <th>description</th>
-      <th>created_at</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @parkings.each do |parking| %>
-      <tr>
-        <td><%= link_to parking.id, parking_path(parking) %></td>
-        <td><%= parking.space_avaible %></td>
-        <td><%= parking.location %></td>
-        <td><%= parking.area_id %></td>
-        <td><%= parking.vehicle_id %></td>
-        <td><%= parking.description %></td>
-        <td><%=l parking.created_at %></td>
-        <td>
-          <%= link_to 'Editar', edit_parking_path(parking), :class => 'btn btn-mini' %>
-          <%= link_to 'Eliminar', parking_path(parking),
-                      :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-mini btn-danger' %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<%= link_to 'Nuevo Estacionamiento', new_parking_path, :class => 'btn btn-primary' %>
+  <div class="page-header">
+    <h1>Aparcamientos</h1>
+  </div>
+    <table class="table table-striped table-bordered table-condensed">
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>espacio disponible</th>
+          <th>Ubicacion</th>
+          <th>Zonas</th>
+          <th>Vehiculos</th>
+          <th>Descripciones</th>
+        </tr>
+      </thead>
+      <tbody>
+       <%= render @parkings %>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td><%= link_to image_tag('nuevo.png', :tile  => "Mostrar Equipos"),  new_parking_path,  :remote => true %></td>
+        </tr>
+      </tfoot>
+    </table>

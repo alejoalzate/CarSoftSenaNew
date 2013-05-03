@@ -1,0 +1,23 @@
+<%- model_class = Document -%>
+	<div class="page-header">
+  		<h1>Documentos</h1>
+		<table class="table table-bordered table-hover" >
+	    	<caption>
+	    		<h3>Informacion</h3>
+	    	</caption>
+	    	<thead>
+	    		<tr class="success">
+	    			<th>Id</th>
+	    			<th>Nombres</th>
+	    			<th>Codigos</th>
+	    		</tr>
+	    	</thead>
+	    	<tbody>
+	    		<tr class="success">
+				    <td><p><%= @document.id %></p></td>
+				    <td><p><%= @document.name %></p></td>
+				    <td><p><%= @document.initials %></p></td>	    
+	    		</tr>
+	    	</tbody>
+	    </table>
+	</div>

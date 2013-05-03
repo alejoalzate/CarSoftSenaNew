@@ -1,16 +1,14 @@
-<%= simple_form_for @format_survey, :html => { :class => 'form-horizontal' } do |f| %>
-  
-  <%= f.error_notification %>
-  <%= display_base_errors @format_survey %>
+<%= simple_form_for(@format_survey, :html => { :class => 'form-horizontal' }, :remote => true) do |f| %>
+    <%= f.error_notification %>
+    <%= display_base_errors @format_survey %>
+    <%= f.input :name %>
+    <%= f.input :user_id %>
+    <%= f.input :survey_id %>
+    <%= f.input :answer_id %>
+    <%= f.input :question_id %>
 
-  <%= f.input :name %>
-  <%= f.input :user_id %>
-  <%= f.input :survey_id %>
-  <%= f.input :answer_id %>
-  <%= f.input :question_id %>
-  <div class="form-actions">
-    <%= f.button :submit, :class => 'btn-primary' %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                format_surveys_path, :class => 'btn' %>
-  </div>
+    <div class="form-actions">
+      <%= f.submit "guardar", :class => 'btn btn-primary' %>
+      <%= link_to 'Atras', format_surveys_path, :class => 'btn btn-small' %>
+    </div>
 <% end %>

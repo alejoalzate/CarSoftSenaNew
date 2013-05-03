@@ -1,0 +1,12 @@
+<tr id=<%= "category_#{category.id}" %>>
+  <td><%= link_to category.id, edit_category_path(category), :remote => true %></td>
+  <td><%= category.name %></td>
+  <td>
+    <%= link_to 'Mostrar', category, :remote => true, :class => 'btn btn-mini' %>
+    <%= link_to 'Editar', edit_category_path(category), :remote => true,
+        :class => 'btn btn-mini' %>
+    <%= link_to 'Eliminar', category, 
+        :data => { :confirm => 'Esta Seguro?' },
+        :method => :delete, :remote => true, :class => 'btn btn-mini btn-danger' %>
+  </td>
+</tr>

@@ -1,6 +1,4 @@
 class AreasController < ApplicationController
-  # GET /areas
-  # GET /areas.json
   def index
     @areas = Area.all
 
@@ -10,74 +8,32 @@ class AreasController < ApplicationController
     end
   end
 
-  # GET /areas/1
-  # GET /areas/1.json
   def show
-    @area = Area.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @area }
-    end
+      @area = Area.find(params[:id])
   end
 
-  # GET /areas/new
-  # GET /areas/new.json
   def new
-    @area = Area.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @area }
-    end
+      @area = Area.new
   end
 
-  # GET /areas/1/edit
   def edit
-    @area = Area.find(params[:id])
+      @area = Area.find(params[:id])
   end
 
-  # POST /areas
-  # POST /areas.json
   def create
-    @area = Area.new(params[:area])
-
-    respond_to do |format|
-      if @area.save
-        format.html { redirect_to @area, notice: 'Area was successfully created.' }
-        format.json { render json: @area, status: :created, location: @area }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @area.errors, status: :unprocessable_entity }
-      end
-    end
+      @area = Area.new(params[:area])
+      render :action => :new unless @area.save
+      
   end
 
-  # PUT /areas/1
-  # PUT /areas/1.json
   def update
-    @area = Area.find(params[:id])
-
-    respond_to do |format|
-      if @area.update_attributes(params[:area])
-        format.html { redirect_to @area, notice: 'Area was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @area.errors, status: :unprocessable_entity }
-      end
-    end
+      @area = Area.find(params[:id])
+      render :action => :edit unless @area.update_attributes(params[:area])
   end
 
-  # DELETE /areas/1
-  # DELETE /areas/1.json
   def destroy
-    @area = Area.find(params[:id])
-    @area.destroy
-
-    respond_to do |format|
-      format.html { redirect_to areas_url }
-      format.json { head :no_content }
-    end
-  end
+      @area = Area.find(params[:id])
+      @area.destroy
+     
+  end  
 end

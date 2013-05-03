@@ -1,0 +1,25 @@
+<%- model_class = ModifyUser  -%>
+	<div class="page-header">
+  		<h1>Modificaciones de Usuarios</h1>
+		<table class="table table-bordered table-hover" >
+	    	<caption>
+	    		<h3>Informacion</h3>
+	    	</caption>
+	    	<thead>
+	    		<tr class="success">
+	    			<th>Id</th>
+	    			<th>Cambiar</th>
+	    			<th>Usuarios</th>
+	    			<th>Descripciones</th>
+	    		</tr>
+	    	</thead>
+	    	<tbody>
+	    		<tr class="success">
+				    <td><p><%= @modify_user.id %></p></td>
+				    <td><p><%= @modify_user.change %></p></td>
+				    <td><p><%= @modify_user.user_id %></p></td>	
+				    <td><p><%= @modify_user.description %></p></td>	      
+	    		</tr>
+	    	</tbody>
+	    </table>
+	</div>

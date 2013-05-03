@@ -1,0 +1,13 @@
+<tr id=<%= "modify_user_#{modify_user.id}" %>>
+    <td><%= link_to modify_user.id, edit_modify_user_path(modify_user), :remote => true %></td>
+    <td><%= modify_user.change  %></td>
+    <td><%= modify_user.user_id %></td>
+    <td><%= modify_user.description %></td>
+    <td>
+        <%= link_to  image_tag('mostrar.png'), modify_user,     :remote => true, :class => 'btn btn-mini' %>
+        <%= link_to image_tag('editar1.png', :title => "Editar Equipos"), edit_modify_user_path(modify_user),  :remote => true,
+          :class => 'btn btn-mini'%>
+        <%= link_to image_tag('eliminar.png', :title => "Eliminar Equipos"), modify_user, :data => { :confirm => 'Esta Seguro?' },
+          :method => :delete, :remote => true, :class => 'btn btn-mini btn-danger' %>
+    </td>
+</tr>
