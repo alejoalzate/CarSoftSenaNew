@@ -1,16 +1,16 @@
 <%- model_class = ModifyUser -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+  <h1>Modificaciones Usuarios</h1>
 </div>
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:change) %></th>
-      <th><%= model_class.human_attribute_name(:user_id) %></th>
-      <th><%= model_class.human_attribute_name(:description) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+      <th>id</th>
+      <th>change</th>
+      <th>user_id</th>
+      <th>description</th>
+      <th>created_at</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -22,10 +22,8 @@
         <td><%= modify_user.description %></td>
         <td><%=l modify_user.created_at %></td>
         <td>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_modify_user_path(modify_user), :class => 'btn btn-mini' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      modify_user_path(modify_user),
+          <%= link_to 'Editar', edit_modify_user_path(modify_user), :class => 'btn btn-mini' %>
+          <%= link_to 'Eliminar', modify_user_path(modify_user),
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
                       :class => 'btn btn-mini btn-danger' %>
@@ -35,6 +33,4 @@
   </tbody>
 </table>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_modify_user_path,
-            :class => 'btn btn-primary' %>
+<%= link_to 'Nueva Modificacion Usuario', new_modify_user_path, :class => 'btn btn-primary' %>

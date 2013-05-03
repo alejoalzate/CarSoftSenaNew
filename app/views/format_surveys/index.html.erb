@@ -1,18 +1,18 @@
 <%- model_class = FormatSurvey -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+  <h1>Formatos Encuestas</h1>
 </div>
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:name) %></th>
-      <th><%= model_class.human_attribute_name(:user_id) %></th>
-      <th><%= model_class.human_attribute_name(:survey_id) %></th>
-      <th><%= model_class.human_attribute_name(:answer_id) %></th>
-      <th><%= model_class.human_attribute_name(:question_id) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+      <th>id</th>
+      <th>name</th>
+      <th>user_id</th>
+      <th>survey_id</th>
+      <th>answer_id</th>
+      <th>question_id</th>
+      <th>created_at</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -26,10 +26,8 @@
         <td><%= format_survey.question_id %></td>
         <td><%=l format_survey.created_at %></td>
         <td>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_format_survey_path(format_survey), :class => 'btn btn-mini' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      format_survey_path(format_survey),
+          <%= link_to 'Editar', edit_format_survey_path(format_survey), :class => 'btn btn-mini' %>
+          <%= link_to 'Eliminar', format_survey_path(format_survey),
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
                       :class => 'btn btn-mini btn-danger' %>
@@ -39,6 +37,4 @@
   </tbody>
 </table>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_format_survey_path,
-            :class => 'btn btn-primary' %>
+<%= link_to 'Nuevo Formato Encuesta', new_format_survey_path, :class => 'btn btn-primary' %>
