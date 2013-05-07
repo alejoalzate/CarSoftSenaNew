@@ -1,11 +1,19 @@
 <%= simple_form_for(@format_survey, :html => { :class => 'form-horizontal' }, :remote => true) do |f| %>
     <%= f.error_notification %>
     <%= display_base_errors @format_survey %>
-    <%= f.input :name %>
-    <%= f.input :user_id %>
-    <%= f.input :survey_id %>
-    <%= f.input :answer_id %>
-    <%= f.input :question_id %>
+    <p><%= f.input :name %></p>
+
+    <p><%= f.label :user_id, :label => "Nombre",  :required => true   %>
+        <%= f.collection_select :user_id, User.all, :id, :code %></p>
+
+    <p><%= f.label :survey_id, :label => "Encuesta",  :required => true   %>
+        <%= f.collection_select :survey_id, Survey.all, :id, :code %></p>
+
+    <p><%= f.label :answer_id, :label => "Repuesta",  :required => true   %>
+        <%= f.collection_select :answer_id, Answer.all, :id, :code %></p>
+
+    <p><%= f.label :question_id, :label => "Pregunta",  :required => true   %>
+        <%= f.collection_select :question_id, Question.all, :id, :code %></p>
 
     <div class="form-actions">
       <%= f.submit "guardar", :class => 'btn btn-primary' %>

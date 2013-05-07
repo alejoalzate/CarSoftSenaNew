@@ -4,7 +4,10 @@
     <%= display_base_errors @program %>
     
     <p><%= f.input :name %></p>
-    <p><%= f.input :center_id %></p>
+    
+    <p><%= f.label :center_id, :label => "Centro",  :required => true   %>
+    <%= f.collection_select :center_id, Center.all, :id, :name %></p>
+
     <p><%= f.input :description %></p>
   
     <div class="form-actions">

@@ -1,15 +1,10 @@
 <%= simple_form_for(@modify_user, :html => { :class => 'form-horizontal' }, :remote => true) do |f| %>
     <%= f.error_notification %>
     <%= display_base_errors @modify_user %>
-    <p>
-       <%= f.input :change %>
-    </p>
-    <p>
-        <%= f.input :user_id %>
-    </p>
-    <p>
-        <%= f.input :description %>
-    </p>
+    <p><%= f.input :change %></p>
+    <p><%= f.label :user_id, :label => "Usuario",  :required => true   %>
+        <%= f.collection_select :user_id, User.all, :id, :name %></p>
+    <p><%= f.input :description %></p>
     
     <div class="form-actions">
       <%= f.submit "guardar", :class => 'btn btn-primary' %>

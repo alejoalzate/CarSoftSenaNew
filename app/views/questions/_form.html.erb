@@ -2,10 +2,13 @@
     <%= f.error_notification %>
     <%= display_base_errors @question %>
     
-    <p><%= f.input :score %></p>
-    <p><%= f.input :category_id %></p>
-    <p><%= f.input :description %></p>
-    <p><%= f.input :letter %></p>
+    <p><%= f.input :score, :label => "Puntaje",  :required => true  %></p>
+    <p><%= f.label :category_id, :label => "Categoria",  :required => true   %>
+    <%= f.collection_select :category_id, Category.all, :id, :name %></p>
+    <p><%= f.input :description, :label => "Descripcion",  :required => true  %></p>
+    <p><%= f.input :letter, :label => "Letra",  :required => true %></p>
+
+      
   
     <div class="form-actions">
       <%= f.submit "guardar", :class => 'btn btn-primary' %>

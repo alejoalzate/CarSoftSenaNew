@@ -1,0 +1,59 @@
+[33mcommit d803a66cf9ae563bc936be312759fdb8cef79086[m
+Author: gregory <gregory@gregory-MS-7309.(none)>
+Date:   Tue May 7 06:41:13 2013 -0500
+
+    lexybox-parte2
+
+[33mcommit 3a82f6b1e658b8e55140aef3568aab83f66badba[m
+Author: gregory <gregory@gregory-MS-7309.(none)>
+Date:   Fri May 3 18:27:10 2013 -0500
+
+    lexybox-scaffold-parte1
+
+[33mcommit 5031c06a29074861b35ac9c0d2ad994a5231963a[m
+Author: Alejo alzate <alejoalzate@misena.edu.co>
+Date:   Fri May 3 10:55:56 2013 -0500
+
+    Modificacion del layaut para una mejor navegacion
+
+[33mcommit 4f6e6f4e84e888f92d198672f28b1aa6d639a859[m
+Author: Alejo alzate <alejoalzate@misena.edu.co>
+Date:   Fri May 3 10:48:27 2013 -0500
+
+    Modificacion del arhivo de rutas routes.rb
+
+[33mcommit 7806d58bb520bdd9d418e05290587c7ec3963d8c[m
+Author: Alejo alzate <alejoalzate@misena.edu.co>
+Date:   Fri May 3 10:45:58 2013 -0500
+
+    Generacion de un controller para las paginas estaticas
+
+[33mcommit c1fd54036fe7e0d9d7c272f641f914eca45012e4[m
+Author: gregory1308 <gregory1308@misena.edu.co>
+Date:   Fri May 3 09:38:24 2013 -0500
+
+    migracion-campo-references
+
+[33mcommit b497938ba1a775d8e9513ae5224334dfbabfd6c3[m
+Author: gregory1308 <gregory1308@misena.edu.co>
+Date:   Fri May 3 08:13:40 2013 -0500
+
+    migracion-campo-references
+
+[33mcommit 5c7177b177ee5165f2278905c6be1abe270ce92c[m
+Author: gregory1308 <gregory1308@misena.edu.co>
+Date:   Thu May 2 10:51:49 2013 -0500
+
+    scaffold con bootstrap
+
+[33mcommit 1d5bac3bf987701b1c1b433f4c3ea7b94cc91e6b[m
+Author: gregory1308 <gregory1308@misena.edu.co>
+Date:   Thu May 2 08:43:39 2013 -0500
+
+    base de datos postgres
+
+[33mcommit 4bed4c0446ee660129169a9c2281189a5b55d125[m
+Author: gregory1308 <gregory1308@misena.edu.co>
+Date:   Mon Apr 29 08:30:36 2013 -0500
+
+    proyecto-carsoft
