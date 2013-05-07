@@ -1,33 +1,20 @@
 <%- model_class = Rh -%>
-<div class="page-header">
-  <h1>Rhs</h1>
-</div>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>id</th>
-      <th>name</th>
-      <th>created_at</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @rhs.each do |rh| %>
-      <tr>
-        <td><%= link_to rh.id, rh_path(rh) %></td>
-        <td><%= rh.name %></td>
-        <td><%=l rh.created_at %></td>
-        <td>
-          <%= link_to 'Editar', edit_rh_path(rh), :class => 'btn btn-mini' %>
-          <%= link_to 'Eliminar', rh_path(rh),
-                      :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-mini btn-danger' %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<%= link_to 'Nuevo Rh', new_rh_path,
-            :class => 'btn btn-primary' %>
+  <div class="page-header">
+    <h1>Repuestas</h1>
+  </div>
+    <table class="table table-striped table-bordered table-condensed">
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>Nombres</th>
+        </tr>
+      </thead>
+      <tbody>
+       <%= render @rhs %>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td><%= link_to image_tag('nuevo.png', :tile  => "Mostrar Equipos"),  new_rh_path,  :remote => true %></td>
+        </tr>
+      </tfoot>
+    </table>

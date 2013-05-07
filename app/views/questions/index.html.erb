@@ -1,38 +1,23 @@
 <%- model_class = Question -%>
-<div class="page-header">
-  <h1>Preguntas</h1>
-</div>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>id</th>
-      <th>description</th>
-      <th>score</th>
-      <th>letter</th>
-      <th>category_id</th>
-      <th>created_at</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @questions.each do |question| %>
-      <tr>
-        <td><%= link_to question.id, question_path(question) %></td>
-        <td><%= question.description %></td>
-        <td><%= question.score %></td>
-        <td><%= question.letter %></td>
-        <td><%= question.category_id %></td>
-        <td><%=l question.created_at %></td>
-        <td>
-          <%= link_to 'Editar', edit_question_path(question), :class => 'btn btn-mini' %>
-          <%= link_to 'Eliminar', question_path(question),
-                      :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-mini btn-danger' %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<%= link_to 'Nueva Pregunta', new_question_path, :class => 'btn btn-primary' %>
+  <div class="page-header">
+    <h1>Preguntas</h1>
+  </div>
+    <table class="table table-striped table-bordered table-condensed">
+      <thead>
+        <tr>
+            <th>id</th>
+            <th>Puntajes</th>
+            <th>Categorias</th>
+            <th>Descripciones</th>
+            <th>Letras</th>
+        </tr>
+      </thead>
+      <tbody>
+       <%= render @questions %>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td><%= link_to image_tag('nuevo.png', :tile  => "Mostrar Equipos"),  new_question_path,  :remote => true %></td>
+        </tr>
+      </tfoot>
+    </table>

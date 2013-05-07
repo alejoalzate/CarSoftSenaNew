@@ -1,0 +1,31 @@
+<%- model_class = Vehicle -%>
+	<div class="page-header">
+  		<h1>Vehiculos</h1>
+		<table class="table table-bordered table-hover" >
+	    	<caption>
+	    		<h3>Informacion</h3>
+	    	</caption>
+	    	<thead>
+	    		<tr class="success">
+	    			<th>Id</th>
+	    			<th>Placa</th>
+	    			<th>color</th>
+	    			<th>Marca</th>
+	    			<th>Modelo</th>
+	    			<th>Tipo vehiculo</th>
+	    			<th>Usuario</th>
+	    		</tr>
+	    	</thead>
+	    	<tbody>
+	    		<tr class="warning">
+				    <td><p><%= @vehicle.id %></p></td>
+				    <td><p><%= @vehicle.plate %></p></td>
+				    <td><p><%= @vehicle.color %></p></td>
+				    <td><p><%= @vehicle.brand %></p></td>
+				    <td><p><%= @vehicle.model %></p></td>
+				    <td><p><%= @vehicle.type_vehicle_id  %></p></td>
+				    <td><p><%= @vehicle.user_id %></p></td> 
+	    		</tr>
+	    	</tbody>
+	    </table>
+	</div>

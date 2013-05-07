@@ -1,0 +1,23 @@
+<%- model_class = Rol -%>
+	<div class="page-header">
+  		<h1>Roles</h1>
+		<table class="table table-bordered table-hover" >
+	    	<caption>
+	    		<h3>Informacion</h3>
+	    	</caption>
+	    	<thead>
+	    		<tr class="success">
+	    			<th>Id</th>
+	    			<th>Nombres</th>
+	    			<th>Siglas</th>
+	    		</tr>
+	    	</thead>
+	    	<tbody>
+	    		<tr class="warning">
+				    <td><p><%= @rol.id %></p></td>
+				    <td><p><%= @rol.name %></p></td>
+				    <td><p><%= @rol.acronym %></p></td> 
+	    		</tr>
+	    	</tbody>
+	    </table>
+	</div>

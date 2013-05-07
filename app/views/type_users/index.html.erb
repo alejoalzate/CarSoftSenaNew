@@ -1,36 +1,22 @@
 <%- model_class = TypeUser -%>
-<div class="page-header">
-  <h1>Tipos Usuarios</h1>
-</div>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>id</th>
-      <th>name</th>
-      <th>acronym</th>
-      <th>description</th>
-      <th>created_at</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @type_users.each do |type_user| %>
-      <tr>
-        <td><%= link_to type_user.id, type_user_path(type_user) %></td>
-        <td><%= type_user.name %></td>
-        <td><%= type_user.acronym %></td>
-        <td><%= type_user.description %></td>
-        <td><%=l type_user.created_at %></td>
-        <td>
-          <%= link_to 'Editar', edit_type_user_path(type_user), :class => 'btn btn-mini' %>
-          <%= link_to 'Eliminar', type_user_path(type_user),
-                      :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-mini btn-danger' %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<%= link_to 'Nuevo Tipo Usuario', new_type_user_path, :class => 'btn btn-primary' %>
+  <div class="page-header">
+    <h1>Tipo Usuarios</h1>
+  </div>
+    <table class="table table-striped table-bordered table-condensed">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Nombres</th>
+          <th>Siglas</th>
+          <th>Descripciones</th>
+        </tr>
+      </thead>
+      <tbody>
+       <%= render @type_users %>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td><%= link_to image_tag('nuevo.png', :tile  => "Mostrar Equipos"),  new_type_user_path,  :remote => true %></td>
+        </tr>
+      </tfoot>
+    </table>

@@ -7,7 +7,7 @@ group :assets do
   	gem 'coffee-rails', '~> 3.2.1'
  	gem 'therubyracer', :platforms => :ruby
 	gem 'json'
-	gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
+	gem "less-rails" 
 	gem 'twitter-bootstrap-rails'
 	gem 'uglifier', '>= 1.0.3'
 	gem 'will_paginate'

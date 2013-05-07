@@ -1,23 +1,23 @@
-<%= simple_form_for @record, :html => { :class => 'form-horizontal' } do |f| %>
-
-  <%= f.error_notification %>
-  <%= display_base_errors @record %>
-
-  <%= f.input :date %>
-  <%= f.input :time %>
-  <%= f.input :amount %>
-  <%= f.input :movements %>
-  <%= f.input :destination %>
-  <%= f.input :center_id %>
-  <%= f.input :provenance %>
-  <%= f.input :vehicle_id %>
-  <%= f.input :porter_id %>
-  <%= f.input :material_id %>
-  <%= f.input :user_id %>
-  <%= f.input :team_id %>
-  <div class="form-actions">
-    <%= f.button :submit, :class => 'btn-primary' %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                records_path, :class => 'btn' %>
-  </div>
+<%= simple_form_for(@record, :html => { :class => 'form-horizontal' }, :remote => true) do |f| %>
+    
+    <%= f.error_notification %>
+    <%= display_base_errors @record %>
+    
+    <p><%= f.input :date %></p>
+    <p><%= f.input :time %></p>
+    <p><%= f.input :amount %></p>
+    <p><%= f.input :movements %></p>
+    <p><%= f.input :destination %></p>
+    <p><%= f.input :provenance %></p>
+    <p><%= f.input :center_id %></p>
+    <p><%= f.input :vehicle_id %></p>
+    <p><%= f.input :porter_id %></p>
+    <p><%= f.input :material_id %></p>
+    <p><%= f.input :user_id %></p>
+    <p><%= f.input :team_id %></p>
+  
+    <div class="form-actions">
+      <%= f.submit "guardar", :class => 'btn btn-primary' %>
+      <%= link_to 'Atras', records_path, :class => 'btn btn-small' %>
+    </div>
 <% end %>

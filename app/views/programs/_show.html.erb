@@ -1,0 +1,25 @@
+<%- model_class = Program-%>
+	<div class="page-header">
+  		<h1>Programas</h1>
+		<table class="table table-bordered table-hover" >
+	    	<caption>
+	    		<h3>Informacion</h3>
+	    	</caption>
+	    	<thead>
+	    		<tr class="success">
+	    			<th>id</th>
+		            <th>Nombre</th>
+		            <th>Centros</th>
+		            <th>descripcion</th>
+	    		</tr>
+	    	</thead>
+	    	<tbody>
+	    		<tr class="success">
+				    <td><p><%= @program.id %></p></td>
+				    <td><p><%= @program.name %></p></td>
+				    <td><p><%= @program.center_id  %></p></td>
+				    <td><p><%= @program.description %></p></td> 
+	    		</tr>
+	    	</tbody>
+	    </table>
+	</div>

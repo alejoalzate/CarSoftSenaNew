@@ -1,14 +1,15 @@
-<%= simple_form_for @program, :html => { :class => 'form-horizontal' } do |f| %>
-
-  <%= f.error_notification %>
-  <%= display_base_errors @program %>
-
-  <%= f.input :name %>
-  <%= f.input :center_id %>
-  <%= f.input :description %>
-  <div class="form-actions">
-    <%= f.button :submit, :class => 'btn-primary' %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                programs_path, :class => 'btn' %>
-  </div>
+<%= simple_form_for(@program, :html => { :class => 'form-horizontal' }, :remote => true) do |f| %>
+    
+    <%= f.error_notification %>
+    <%= display_base_errors @program %>
+    
+    <p><%= f.input :name %></p>
+    <p><%= f.input :center_id %></p>
+    <p><%= f.input :description %></p>
+  
+    <div class="form-actions">
+      <%= f.submit "guardar", :class => 'btn btn-primary' %>
+      <%= link_to 'Atras', programs_path, :class => 'btn btn-small' %>
+    </div>
 <% end %>
+

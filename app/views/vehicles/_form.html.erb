@@ -1,17 +1,17 @@
-<%= simple_form_for @vehicle, :html => { :class => 'form-horizontal' } do |f| %>
+<%= simple_form_for(@vehicle, :html => { :class => 'form-horizontal' }, :remote => true) do |f| %>
 
-  <%= f.error_notification %>
-  <%= display_base_errors @vehicle %>
+    <%= f.error_notification %>
+    <%= display_base_errors  @vehicle %>
 
-  <%= f.input :plate %>
-  <%= f.input :color %>
-  <%= f.input :brand %>
-  <%= f.input :model %>
-  <%= f.input :type_vehicle_id %>
-  <%= f.input :user_id %>
-  <div class="form-actions">
-    <%= f.button :submit, :class => 'btn-primary' %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                vehicles_path, :class => 'btn' %>
-  </div>
+    <p><%= f.input :plate %></p>
+    <p><%= f.input :color %></p>
+    <p><%= f.input :brand %></p>
+    <p><%= f.input :model %></p>
+    <p><%= f.input :type_vehicle_id %></p>
+    <p><%= f.input :user_id %></p>
+ 
+    <div class="form-actions">
+      <%= f.submit "guardar", :class => 'btn btn-primary' %>
+      <%= link_to 'Atras',  vehicles_path, :class => 'btn btn-small' %>
+    </div>
 <% end %>

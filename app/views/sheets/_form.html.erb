@@ -1,13 +1,12 @@
-<%= simple_form_for @sheet, :html => { :class => 'form-horizontal' } do |f| %>
+<%= simple_form_for(@sheet, :html => { :class => 'form-horizontal' }, :remote => true) do |f| %>
+    <%= f.error_notification %>
+    <%= display_base_errors @sheet %>
 
-  <%= f.error_notification %>
-  <%= display_base_errors @sheet %>
-
-  <%= f.input :code %>
-  <%= f.input :program_id %>
-  <div class="form-actions">
-    <%= f.button :submit, :class => 'btn-primary' %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                sheets_path, :class => 'btn' %>
-  </div>
+    <p><%= f.input :code %></p>
+    <p><%= f.input :program_id %></p> 
+    	
+    <div class="form-actions">
+	    <%= f.submit "guardar", :class => 'btn btn-primary' %>
+	    <%= link_to 'Atras', sheets_path, :class => 'btn btn-small' %>
+  	</div>
 <% end %>

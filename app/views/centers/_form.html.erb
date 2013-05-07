@@ -3,12 +3,8 @@
     <%= f.error_notification %>
     <%= display_base_errors @center %>
     
-    <p>
-  		 <%= f.input :name %>
-    </p>
-    <p>
-    	<%= f.input :code_id %>
-  	</p>
+    <p><%= f.input :name, :label => "Nombre",  :required => true  %></p>
+    <p><%= f.input :code_id, :label => "Codigo",  :required => true  %></p>
     <div class="form-actions">
 	    <%= f.submit "guardar", :class => 'btn btn-primary' %>
 	    <%= link_to 'Atras',  centers_path, :class => 'btn btn-small' %>

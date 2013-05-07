@@ -1,34 +1,21 @@
 <%- model_class = TypeMaterial -%>
-<div class="page-header">
-  <h1>Tipos Materiales</h1>
-</div>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>id</th>
-      <th>name</th>
-      <th>description</th>
-      <th>created_at</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @type_materials.each do |type_material| %>
-      <tr>
-        <td><%= link_to type_material.id, type_material_path(type_material) %></td>
-        <td><%= type_material.name %></td>
-        <td><%= type_material.description %></td>
-        <td><%=l type_material.created_at %></td>
-        <td>
-          <%= link_to 'Editar', edit_type_material_path(type_material), :class => 'btn btn-mini' %>
-          <%= link_to 'Eliminar', type_material_path(type_material),
-                      :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-mini btn-danger' %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<%= link_to 'Nuevo Tipo Material', new_type_material_path, :class => 'btn btn-primary' %>
+  <div class="page-header">
+    <h1>Tipo Materiales</h1>
+  </div>
+    <table class="table table-striped table-bordered table-condensed">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Nombres</th>
+          <th>Descripcion</th>
+        </tr>
+      </thead>
+      <tbody>
+       <%= render @type_materials %>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td><%= link_to image_tag('nuevo.png', :tile  => "Mostrar Equipos"),  new_type_material_path,  :remote => true %></td>
+        </tr>
+      </tfoot>
+    </table>

@@ -1,9 +1,8 @@
 <%= simple_form_for(@code, :html => { :class => 'form-horizontal' }, :remote => true) do |f| %>
     <%= f.error_notification %>
     <%= display_base_errors @code %>
-    <p>
-  		<%= f.input :code %>
-    </p>
+
+    <p><%= f.input :code, :label => "Codigo",  :required => true  %></p>
   
     <div class="form-actions">
 	    <%= f.submit "guardar", :class => 'btn btn-primary' %>

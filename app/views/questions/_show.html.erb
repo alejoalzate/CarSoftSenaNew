@@ -1,0 +1,27 @@
+<%- model_class = Question-%>
+	<div class="page-header">
+  		<h1>Preguntas</h1>
+		<table class="table table-bordered table-hover" >
+	    	<caption>
+	    		<h3>Informacion</h3>
+	    	</caption>
+	    	<thead>
+	    		<tr class="success">
+	    			<th>id</th>
+		            <th>Puntajes</th>
+		            <th>Categorias</th>
+		            <th>Descripciones</th>
+		            <th>Letras</th>
+	    		</tr>
+	    	</thead>
+	    	<tbody>
+	    		<tr class="success">
+				    <td><p><%= @question.id %></p></td>
+				    <td><p><%= @question.score %></p></td>
+				    <td><p><%= @question.category_id  %></p></td>
+				    <td><p><%= @question.description  %></p></td>
+				    <td><p><%= @question.letter %></p></td>	 
+	    		</tr>
+	    	</tbody>
+	    </table>
+	</div>
