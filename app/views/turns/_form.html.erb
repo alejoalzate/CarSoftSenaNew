@@ -1,8 +1,11 @@
 <%= simple_form_for(@turn, :html => { :class => 'form-horizontal' }, :remote => true) do |f| %>
     <%= f.error_notification %>
     <%= display_base_errors @turn %>
-
-    <p><%= f.input :date %><p>
+    <p><%= f.input :day, :label => "Jornada",  :required => true   %></p>
+    <p><%= f.input :start_time, :label => "	Hora",  :required => true  %></p>
+    <p><%= f.input :finish_time, :label => "	Hora",  :required => true  %></p>
+    <p><%= f.input :start_date, :label => "Fecha",  :required => true    %><p>
+    <p><%= f.input :finish_date, :label => "Fecha",  :required => true    %><p>
  
     <div class="form-actions">
       <%= f.submit "guardar", :class => 'btn btn-primary' %>

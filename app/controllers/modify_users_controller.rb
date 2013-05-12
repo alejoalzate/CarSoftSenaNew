@@ -1,7 +1,10 @@
 class ModifyUsersController < ApplicationController
  
   def index
-    @modify_users = ModifyUser.all
+    if params[:registro] == nil or params[:registro] <= '0' then 
+        params[:registro] = 2 
+    end
+    @modify_users = ModifyUser.search(params[:buscar]).page(params[:page]).per_page(params[:registro].to_i)
 
     respond_to do |format|
       format.html # index.html.erb

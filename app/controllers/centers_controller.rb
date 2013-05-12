@@ -1,6 +1,9 @@
 class CentersController < ApplicationController
   def index
-    @centers = Center.all
+   if params[:registro] == nil or params[:registro] <= '0' then 
+        params[:registro] = 2 
+    end
+    @centers = Center.search(params[:buscar]).page(params[:page]).per_page(params[:registro].to_i)
 
     respond_to do |format|
       format.html 

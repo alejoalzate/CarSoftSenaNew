@@ -1,7 +1,10 @@
 class AnswersController < ApplicationController
   def index
-    @answers = Answer.all
 
+    if params[:registro] == nil or params[:registro] <= '0' then 
+        params[:registro] = 2 
+    end
+    @answers = Answer.search(params[:buscar]).page(params[:page]).per_page(params[:registro].to_i)
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @answers }

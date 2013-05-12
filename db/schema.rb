@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(:version => 20130503130709) do
 
   create_table "answers", :force => true do |t|
     t.string   "answer"
-    t.boolean  "letter"
+    t.string   "letter"
     t.integer  "question_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
@@ -145,7 +145,7 @@ ActiveRecord::Schema.define(:version => 20130503130709) do
   create_table "questions", :force => true do |t|
     t.string   "description"
     t.integer  "score"
-    t.boolean  "letter"
+    t.string   "letter"
     t.integer  "category_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
@@ -222,25 +222,30 @@ ActiveRecord::Schema.define(:version => 20130503130709) do
   add_index "surveys", ["user_id"], :name => "index_surveys_on_user_id"
 
   create_table "teams", :force => true do |t|
-    t.boolean  "type_team"
     t.string   "name"
     t.string   "serial"
     t.boolean  "mouse"
     t.boolean  "charger"
     t.string   "color"
+    t.integer  "type_material_id"
     t.integer  "porter_id"
     t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
   add_index "teams", ["porter_id"], :name => "index_teams_on_porter_id"
+  add_index "teams", ["type_material_id"], :name => "index_teams_on_type_material_id"
   add_index "teams", ["user_id"], :name => "index_teams_on_user_id"
 
   create_table "turns", :force => true do |t|
-    t.date     "date"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "day"
+    t.time     "start_time"
+    t.time     "finish_time"
+    t.date     "start_date"
+    t.date     "finish_date"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "type_materials", :force => true do |t|
