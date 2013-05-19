@@ -1,60 +1,58 @@
 <%- model_class = User -%>
-<div class="page-header">
-  <h1>Usuarios</h1>
-</div>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>id</th>
-      <th>name</th>
-      <th>surname</th>
-      <th>finger_print</th>
-      <th>male</th>
-      <th>female</th>
-      <th>identification</th>
-      <th>key</th>
-      <th>email</th>
-      <th>address_residence</th>
-      <th>phone</th>
-      <th>movil</th>
-      <th>document_id</th>
-      <th>rh_id</th>
-      <th>role_id</th>
-      <th>type_id</th>
-      <th>created_at</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <td><%= link_to user.id, user_path(user) %></td>
-        <td><%= user.name %></td>
-        <td><%= user.surname %></td>
-        <td><%= user.finger_print %></td>
-        <td><%= user.male %></td>
-        <td><%= user.female %></td>
-        <td><%= user.identification %></td>
-        <td><%= user.key %></td>
-        <td><%= user.email %></td>
-        <td><%= user.address_residence %></td>
-        <td><%= user.phone %></td>
-        <td><%= user.movil %></td>
-        <td><%= user.document_id %></td>
-        <td><%= user.rh_id %></td>
-        <td><%= user.role_id %></td>
-        <td><%= user.type_id %></td>
-        <td><%=l user.created_at %></td>
-        <td>
-          <%= link_to 'Editar', edit_user_path(user), :class => 'btn btn-mini' %>
-          <%= link_to 'Eliminar', user_path(user),
-                      :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-mini btn-danger' %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<%= link_to 'Nuevo Usuario', new_user_path, :class => 'btn btn-primary' %>
+  <div class="page-header">
+    <h1>Usuarios</h1>
+  </div>
+  <div class="navbar">
+    <div class="navbar-inner">
+    <li id='buscar' class="brand" href="#">Buscar</li> 
+      <div class="row">
+        <div class="span6">
+          <form method="GET" class="form-inline" >
+            <input id='buscar' name="buscar" class="search-query" type="text"  placeholder="Buscar" >
+            <button id='buscar' type="submit" class="btn btn-primary"><i class="icon-search icon-white"></i></button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>Nombres</th>
+          <th>Apellidos</th>
+          <th>Identificaciones</th>
+          <th>emails</th>
+          <th>Dirreciones</th>
+          <th>Telefonos</th>
+          <th>Celulars</th>
+          <th>Acciones</th>
+          <th>Vehiculos</th>
+        </tr>
+      </thead>
+      <tbody>
+       <%= render @users %>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td><%= link_to image_tag('nuevo.png', :tile  => "Mostrar Equipos"),  new_user_path,  :remote => true %></td>
+        </tr>
+      </tfoot>
+      <tfoot>
+          <tr>
+              <td><b>Total</b></td>
+            <td>
+                <p id='total_regs'><%= @users.total_entries %></p>
+            </td>
+          </tr>
+      </tfoot>
+    </table>
+  </div>
+    </table>
+      <div align="center">
+        <div id="pagination" class="pagination">
+          </ul>
+              <%= will_paginate @users, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente&raquo;' %>
+          </ul>
+        </div>
+      </div>
