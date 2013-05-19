@@ -14,14 +14,14 @@ class CreateUsers < ActiveRecord::Migration
       t.string :movil
       t.references :document
       t.references :rh
-      t.references :role
-      t.references :type
+      t.references :rol
+      t.references :type_user
 
       t.timestamps
     end
     add_index :users, :document_id
     add_index :users, :rh_id
-    add_index :users, :role_id
-    add_index :users, :type_id
+    add_index :users, :rol_id
+    add_index :users, :type_user_id
   end
 end
