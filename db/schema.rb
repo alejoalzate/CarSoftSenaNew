@@ -284,16 +284,16 @@ ActiveRecord::Schema.define(:version => 20130503130709) do
     t.string   "movil"
     t.integer  "document_id"
     t.integer  "rh_id"
-    t.integer  "role_id"
-    t.integer  "type_id"
+    t.integer  "rol_id"
+    t.integer  "type_user_id"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
   end
 
   add_index "users", ["document_id"], :name => "index_users_on_document_id"
   add_index "users", ["rh_id"], :name => "index_users_on_rh_id"
-  add_index "users", ["role_id"], :name => "index_users_on_role_id"
-  add_index "users", ["type_id"], :name => "index_users_on_type_id"
+  add_index "users", ["rol_id"], :name => "index_users_on_rol_id"
+  add_index "users", ["type_user_id"], :name => "index_users_on_type_user_id"
 
   create_table "vehicles", :force => true do |t|
     t.string   "plate"
