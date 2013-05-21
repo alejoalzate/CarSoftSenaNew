@@ -3,9 +3,7 @@
     <td><%= code.code  %></td>
     <td>
         <%= link_to  image_tag('mostrar.png'), code,     :remote => true, :class => 'btn btn-mini' %>
-        <%= link_to image_tag('editar1.png', :title => "Editar Equipos"), edit_code_path(code),  :remote => true,
-          :class => 'btn btn-mini'%>
-        <%= link_to image_tag('eliminar.png', :title => "Eliminar Equipos"), code, :data => { :confirm => 'Esta Seguro?' },
-          :method => :delete, :remote => true, :class => 'btn btn-mini btn-danger' %>
+        <%= link_to image_tag('editar1.png', :title => "Editar Equipos"), edit_code_path(code),  :remote => true,  :class => 'btn btn-mini'%>
+        <%= link_to image_tag('eliminar.png', :title => "Eliminar Equipos"), code, :data => { :confirm => 'Esta Seguro?' }, :method => :delete, :remote => true, :class => 'btn btn-mini btn-danger' %>
     </td>
 </tr>

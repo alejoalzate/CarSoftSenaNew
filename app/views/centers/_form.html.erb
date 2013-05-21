@@ -6,7 +6,7 @@
     <p><%= f.input :name, :label => "Nombre",  :required => true  %></p>
    
     <p><%= f.label :code_id, :label => "Codigo",  :required => true   %>
-    	<%= f.collection_select :code_id, Code.all, :id, :code %></p>
+    <%= f.collection_select :code_id, Code.all, :id, :code %></p>
 
     <div class="form-actions">
 	    <%= f.submit "guardar", :class => 'btn btn-primary' %>
