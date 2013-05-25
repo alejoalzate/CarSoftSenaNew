@@ -14,7 +14,7 @@
  */
 
 
-body{
+body {
 font: normal normal 15px Arial, Tahoma, Helvetica, FreeSans, sans-serif;
 color: #333333;
 background: #dddddd url('Principal-home.png') no-repeat fixed top left;
@@ -69,7 +69,7 @@ h1{
 }
 
 
-.simple_form label {
+       .simple_form label {
   float: left;
   width: 100px;
   text-align: right;
@@ -152,25 +152,8 @@ li#buscar{
 
 #color{
 margin-top: 10px;
-color: #fff;
+color: rgb(252,115,35);
 }
-a#c{
-color:#fff;
-background:#59b548; 
-margin: 2em 0;
-height: 10px;
-text-align: center;
-padding:10px;
-width:10%;
-}
-a#ce{
-color:#fff;
-background: #238276; 
-margin: 2em 0;
-
-}
-
-
 
 a#ver{
  color:#E8E8E8 ;
@@ -181,22 +164,10 @@ div#footer{
   margin-top: 40px;
 }
 
-p#sena1{
-  color: #fff;
+p#sena{
+  color: black;
   margin-left: 53px;
-  margin-top: -30px;
-
-}
-
-p#sena2{
-  color: #fff;
-  margin-left: 240px;
   margin-top: -25px;
-
-}
-
-#linkto{
-  color: #0d5553;
 }
 
 #image{
@@ -210,7 +181,6 @@ width: 150%;
 margin-top: -10px;
 
 }
-
 
 
 

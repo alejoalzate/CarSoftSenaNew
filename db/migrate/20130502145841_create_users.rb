@@ -4,7 +4,6 @@ class CreateUsers < ActiveRecord::Migration
       t.string :name
       t.string :surname
       t.string :finger_print
-      t.boolean :male
       t.boolean :female
       t.string :identification
       t.string :key

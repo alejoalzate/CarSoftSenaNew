@@ -1,9 +1,15 @@
 Carsoft::Application.routes.draw do
-  get "pages/index"
+
     resources :users do
     resources :vehicles
   end
-  root :to => 'pages#index'
+  root :to => "pages#home"
+
+  get "pages/home"
+  get "pages/about"
+  get "pages/admin"
+  get  "admin2" => "pages#admin2", :as => "admin2"
+  get "about" => "pages#about", :as => "about"
 
   resources :records
 

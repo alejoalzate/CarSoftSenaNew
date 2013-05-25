@@ -11,12 +11,12 @@
 </li>
 <!-- else %> -->
 <li>
-<%= link_to('Registrarse', "") %>
+<%= link_to ('Registrarse'),  new_user_path,  :remote => true %>
 </li>
 <!-- end %> -->
 <!-- if user_signed_in? %> -->
 <li>
-<%= link_to('Usuarios', "") %>
+<%= link_to('Usuarios', users_path) %>
 </li>
 <!-- else %> -->
 <li>
