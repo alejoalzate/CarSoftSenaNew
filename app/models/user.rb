@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   has_many :team
   has_many :material
   has_many :modify_user
+  has_many :suggestion
   attr_accessible :address_residence, :email, :female, :finger_print, :identification, 
   :key, :movil, :name, :phone, :surname, :document_id, :rh_id, :rol_id, :type_user_id
 

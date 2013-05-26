@@ -1,5 +1,8 @@
 Carsoft::Application.routes.draw do
 
+  resources :suggestions
+
+
     resources :users do
     resources :vehicles
     resources :teams
@@ -17,24 +20,7 @@ Carsoft::Application.routes.draw do
 
   resources :records
 
-  
-
-
-  resources :format_surveys
-
-
-  resources :results
-
-
-  resources :answers
-
-
-
-
   resources :center_programs
-
-
-  resources :surveys
 
 
   resources :materials
@@ -53,12 +39,6 @@ Carsoft::Application.routes.draw do
 
 
   resources :programs
-
-
-  resources :categories
-
-
-  resources :questions
 
 
   resources :rols

@@ -9,7 +9,7 @@
         <div class="span6">
           <form method="GET" class="form-inline" >
             <input id='buscar' name="buscar" class="search-query" type="text"  placeholder="Buscar" >
-            <button id='buscar' type="submit" class="btn btn-primary"><i class="icon-search icon-white"></i></button>
+            <a  rel="tooltip" title="Ingresar datos a buscar"><button id='buscar' type="submit" class="btn btn-primary"><i class="icon-search icon-white"></i></button></a>
           </form>
         </div>
       </div>
@@ -32,8 +32,8 @@
       </tbody>
       <tfoot>
         <tr>
-           <td><%= link_to image_tag("participantes.png"), new_user_vehicle_path, :remote => true  %> </td>
-              <td><%= link_to image_tag("atras.png"), users_path %></td>
+           <td><%= link_to image_tag('glyphicons_005_car.png'), new_user_vehicle_path, :remote => true, :class => 'btn btn-mini', :rel => "tooltip", :title => "Igresar Vehiculos" %> </td>
+              <td><%= link_to image_tag("atras.png"), users_path, :class => 'btn btn-mini', :rel => "tooltip", :title => "Regresar a Usuarios" %></td>
         </tr>
       </tfoot>
       <tfoot>

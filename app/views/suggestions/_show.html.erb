@@ -1,0 +1,35 @@
+<%- model_class = Suggestion  -%>
+	<div class="page-header">
+  		<h1>Sugerencias</h1>
+		<table class="table table-bordered table-hover" >
+	    	<caption>
+	    		<h3>Informacion</h3>
+	    	</caption>
+	    	<thead>
+	    		<tr class="success">
+	    			  <th>id</th>
+			          <th>Nombres</th>
+			          <th>Apellidos</th>
+			          <th>Tipo Documentos</th>
+			          <th>Numero identidad</th>
+			          <th>Telefonos</th>
+			          <th>Celulares</th>
+			          <th>Sugerencias</th>
+	    		</tr>
+	    	</thead>
+	    	<tbody>
+	    		<tr class="success">
+	    			 	<td><p><%= @suggestion.id %></p></td>
+				     	<td><p><%= @suggestion.name %></p></td>
+					    <td><p><%= @suggestion.surname %></p></td>
+					    <td><p><%= @suggestion.document.name %></p></td>
+					    <td><p><%= @suggestion.number_identification %></p></td>
+					    <td><p><%= @suggestion.phone %></p></td>
+					    <td><p><%= @suggestion.movil %></p></td>
+					    <td><p><%= @suggestion.suggestion %></p></td>
+					    <td>
+				    
+	    		</tr>
+	    	</tbody>
+	    </table>
+	</div>
