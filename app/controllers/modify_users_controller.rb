@@ -1,10 +1,11 @@
 class ModifyUsersController < ApplicationController
+  before_filter :find_user_modify_users
  
   def index
     if params[:registro] == nil or params[:registro] <= '0' then 
         params[:registro] = 2 
     end
-    @modify_users = ModifyUser.search(params[:buscar]).page(params[:page]).per_page(params[:registro].to_i)
+    @modify_users = @user.modify_user.search(params[:buscar]).page(params[:page]).per_page(params[:registro].to_i)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -12,7 +13,7 @@ class ModifyUsersController < ApplicationController
     end
   end
   def show
-      @modify_user = ModifyUser.find(params[:id])
+    
   end
 
   def new
@@ -20,11 +21,11 @@ class ModifyUsersController < ApplicationController
   end
 
   def edit
-      @modify_user = ModifyUser.find(params[:id])
+     
   end
 
   def create
-      @modify_user = ModifyUser.new(params[:modify_user])
+      @modify_user = @user.modify_user.new(params[:modify_user])
       render :action => :new unless @modify_user.save
   end
 
@@ -36,6 +37,13 @@ class ModifyUsersController < ApplicationController
   def destroy
       @modify_user = ModifyUser.find(params[:id])
       @modify_user.destroy
+  end
+
+  private
+  
+  def find_user_modify_users
+     @user = User.find(params[:user_id])
+     @modify_user = ModifyUser.find(params[:id]) if params[:id]
   end
   
 end

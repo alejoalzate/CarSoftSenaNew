@@ -1,4 +1,6 @@
-<%= simple_form_for(@team, :html => { :class => 'form-horizontal' }, :remote => true) do |f| %>
+<%= simple_form_for([@user, @team], :html => { :class => 'form-horizontal' },
+ :remote => true) do |f| %>
+
     <%= f.error_notification %>
     <%= display_base_errors @team %>
 
@@ -9,13 +11,11 @@
         <%= f.collection_select :type_material_id, TypeMaterial.all, :id, :name %></p>
    <p><%= f.label :porter_id, :label => "Portero",  :required => true   %>
     	<%= f.collection_select :porter_id,  Porter.all, :id, :name %></p>
-    <p><%= f.label :user_id , :label => "Usuario",  :required => true   %>
-    	<%= f.collection_select :user_id, User.all, :id, :name %></p>
     	<p><%= f.input :mouse, :label => "Mouse",  :required => true   %></p>
     <p><%= f.input :charger, :label => "Cargador",  :required => true   %></p>
     
     <div class="form-actions">
       <%= f.submit "guardar", :class => 'btn btn-primary' %>
-      <%= link_to 'Atras', teams_path, :class => 'btn btn-small' %>
+       <%= link_to 'Atras',  user_teams_path, :class => 'btn btn-small' %>
     </div>
 <% end %>

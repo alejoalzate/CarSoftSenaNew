@@ -1,14 +1,13 @@
 <tr id=<%= "material_#{material.id}" %>>
-    <td><%= link_to material.id, edit_material_path(material), :remote => true %></td>
+    <td><%= link_to material.id, edit_user_material_path(@user, material), :remote => true %></td>
     <td><%= material.name %></td>
-    <td><%= material.type_material_id  %></td>
-    <td><%= material.user_id %></td>
+    <td><%= material.type_material.name  %></td>
+    <td><%= material.user.name %></td>
     <td><%= material.description %></td>
-    <td>
-        <%= link_to  image_tag('mostrar.png'), material,     :remote => true, :class => 'btn btn-mini' %>
-        <%= link_to image_tag('editar1.png', :title => "Editar Equipos"), edit_material_path(material),  :remote => true,
+     <td>
+        <%= link_to  image_tag('mostrar.png'), user_material_path(@user, material),     :remote => true, :class => 'btn btn-mini' %>
+        <%= link_to image_tag('editar1.png', :title => "Editar Equipos"), edit_user_material_path(@user, material),  :remote => true,
           :class => 'btn btn-mini'%>
-        <%= link_to image_tag('eliminar.png', :title => "Eliminar Equipos"), material, :data => { :confirm => 'Esta Seguro?' },
-          :method => :delete, :remote => true, :class => 'btn btn-mini btn-danger' %>
+        <%= link_to image_tag('eliminar.png', :title => "Eliminar Equipos"), user_material_path(@user, material), :data => { :confirm => 'Esta Seguro?' }, :method => :delete, :remote => true, :class => 'btn btn-mini btn-danger' %>
     </td>
 </tr>

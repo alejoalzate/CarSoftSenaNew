@@ -1,9 +1,10 @@
 class MaterialsController < ApplicationController
+   before_filter :find_user_materials
   def index
     if params[:registro] == nil or params[:registro] <= '0' then 
         params[:registro] = 2 
     end
-    @materials = Material.search(params[:buscar]).page(params[:page]).per_page(params[:registro].to_i)
+    @materials = @user.material.search(params[:buscar]).page(params[:page]).per_page(params[:registro].to_i)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -11,7 +12,7 @@ class MaterialsController < ApplicationController
     end
   end
   def show
-      @material = Material.find(params[:id])
+    
   end
 
   def new
@@ -19,11 +20,11 @@ class MaterialsController < ApplicationController
   end
 
   def edit
-      @material = Material.find(params[:id])
+     
   end
 
   def create
-      @material = Material.new(params[:material])
+      @material = @user.material.new(params[:material])
       render :action => :new unless @material.save
   end
 
@@ -36,5 +37,12 @@ class MaterialsController < ApplicationController
       @material = Material.find(params[:id])
       @material.destroy
   end
+
+   private
+  
+  def find_user_materials
+     @user = User.find(params[:user_id])
+     @material = Material.find(params[:id]) if params[:id]
+  end 
   
 end

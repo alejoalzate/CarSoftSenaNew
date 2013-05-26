@@ -2,7 +2,11 @@ Carsoft::Application.routes.draw do
 
     resources :users do
     resources :vehicles
+    resources :teams
+    resources :materials
+    resources :modify_users
   end
+ 
   root :to => "pages#home"
 
   get "pages/home"
@@ -13,7 +17,7 @@ Carsoft::Application.routes.draw do
 
   resources :records
 
-  resources :teams
+  
 
 
   resources :format_surveys
@@ -25,7 +29,6 @@ Carsoft::Application.routes.draw do
   resources :answers
 
 
-  resources :modify_users
 
 
   resources :center_programs

@@ -1,13 +1,14 @@
-<%= simple_form_for(@modify_user, :html => { :class => 'form-horizontal' }, :remote => true) do |f| %>
+<%= simple_form_for([@user, @modify_user], :html => { :class => 'form-horizontal' },
+ :remote => true) do |f| %>
+
     <%= f.error_notification %>
     <%= display_base_errors @modify_user %>
+
     <p><%= f.input :change, :label => "Cambiar",  :required => true  %></p>
-    <p><%= f.label :user_id, :label => "Usuario",  :required => true   %>
-        <%= f.collection_select :user_id, User.all, :id, :name %></p>
     <p><%= f.input :description, :label => "Descripcion",  :required => true  %></p>
     
     <div class="form-actions">
       <%= f.submit "guardar", :class => 'btn btn-primary' %>
-      <%= link_to 'Atras',   modify_users_path, :class => 'btn btn-small' %>
+      <%= link_to 'Atras',  user_modify_users_path, :class => 'btn btn-small' %>
     </div>
 <% end %>

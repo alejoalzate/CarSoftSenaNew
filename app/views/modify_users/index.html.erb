@@ -9,7 +9,7 @@
         <div class="span6">
           <form method="GET" class="form-inline" >
             <input id='buscar' name="buscar" class="search-query" type="text"  placeholder="Buscar" >
-            <button id='buscar' type="submit" class="btn btn-primary"><i class="icon-search icon-white"></i></	   button>
+            <button id='buscar' type="submit" class="btn btn-primary"><i class="icon-search icon-white"></i></button>
           </form>
         </div>
       </div>
@@ -20,7 +20,6 @@
         <tr>
             <th>Id</th>
             <th>Cambiar</th>
-            <th>Usuarios</th>
             <th>Descripciones</th>
             <th>Acciones</th>
         </tr>
@@ -30,8 +29,10 @@
       </tbody>
       <tfoot>
         <tr>
-          <td><%= link_to image_tag('nuevo.png', :tile  => "Mostrar Equipos"),  new_modify_user_path,  :remote => true %></td>
+         <td><%= link_to image_tag("participantes.png"), new_user_modify_user_path, :remote => true  %> </td>
+              <td><%= link_to image_tag("atras.png"), users_path %></td>
         </tr>
+
       </tfoot>
       <tfoot>
           <tr>
