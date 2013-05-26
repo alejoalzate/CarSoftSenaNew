@@ -41,6 +41,7 @@ GEM
     coffee-script-source (1.6.2)
     commonjs (0.2.6)
     daemons (1.1.9)
+    database_cleaner (1.0.1)
     erubis (2.7.0)
     eventmachine (1.0.3)
     execjs (1.4.0)
@@ -134,6 +135,7 @@ PLATFORMS
 DEPENDENCIES
   bootstrap-will_paginate
   coffee-rails (~> 3.2.1)
+  database_cleaner
   jquery-rails
   json
   lazybox
