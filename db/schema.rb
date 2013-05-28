@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130526185134) do
+ActiveRecord::Schema.define(:version => 20130528162711) do
 
   create_table "answers", :force => true do |t|
     t.string   "answer"
@@ -23,12 +23,50 @@ ActiveRecord::Schema.define(:version => 20130526185134) do
 
   add_index "answers", ["question_id"], :name => "index_answers_on_question_id"
 
+  create_table "area_centers", :force => true do |t|
+    t.string   "name"
+    t.string   "extension"
+    t.integer  "center_id"
+    t.string   "phone"
+    t.string   "specification"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "area_centers", ["center_id"], :name => "index_area_centers_on_center_id"
+
   create_table "areas", :force => true do |t|
     t.string   "name"
     t.string   "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
+
+  create_table "authorizations", :force => true do |t|
+    t.string   "name"
+    t.string   "surname"
+    t.boolean  "genre"
+    t.integer  "document_id"
+    t.string   "identification"
+    t.text     "item_description"
+    t.string   "charge"
+    t.string   "phone"
+    t.string   "avatar"
+    t.boolean  "repair"
+    t.boolean  "sample_property"
+    t.boolean  "loan"
+    t.boolean  "seminar"
+    t.string   "course_elements"
+    t.boolean  "others"
+    t.date     "date"
+    t.boolean  "acceptance"
+    t.integer  "user_id"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
+  add_index "authorizations", ["document_id"], :name => "index_authorizations_on_document_id"
+  add_index "authorizations", ["user_id"], :name => "index_authorizations_on_user_id"
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -176,6 +214,22 @@ ActiveRecord::Schema.define(:version => 20130526185134) do
   add_index "records", ["team_id"], :name => "index_records_on_team_id"
   add_index "records", ["user_id"], :name => "index_records_on_user_id"
   add_index "records", ["vehicle_id"], :name => "index_records_on_vehicle_id"
+
+  create_table "responsibles", :force => true do |t|
+    t.string   "name"
+    t.string   "surname"
+    t.string   "extension"
+    t.integer  "document_id"
+    t.string   "identification"
+    t.boolean  "genre"
+    t.integer  "area_center_id"
+    t.string   "phone"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  add_index "responsibles", ["area_center_id"], :name => "index_responsibles_on_area_center_id"
+  add_index "responsibles", ["document_id"], :name => "index_responsibles_on_document_id"
 
   create_table "results", :force => true do |t|
     t.integer  "answer_id"

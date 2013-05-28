@@ -1,0 +1,26 @@
+<%- model_class = AreaCenter -%>
+<div class="page-header">
+  <h1>Area Center</h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>name</th>
+      <th>extension</th>
+      <th>center_id</th>
+      <th>phone</th>
+      <th>specification</th>
+      <th>created_at</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @area_centers %>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td><%= link_to 'Nueva Area Centro', new_area_center_path, :remote => true %></td>
+    </tr>
+  </tfoot>
+</table>

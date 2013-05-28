@@ -1,0 +1,18 @@
+<tr id=<%= "responsible_#{responsible.id}" %>>
+  <td></td>
+  <td><%= responsible.name %></td>
+  <td><%= responsible.surname %></td>
+  <td><%= responsible.extension %></td>
+  <td><%= responsible.document_id %></td>
+  <td><%= responsible.genre %></td>
+  <td><%= responsible.area_center_id %></td>
+  <td><%= responsible.phone %></td>
+  <td>
+    <%= link_to 'Mostrar', responsible, :remote => true, :class => 'btn btn-mini' %>
+    <%= link_to 'Editar', edit_responsible_path(responsible), :remote => true,
+        :class => 'btn btn-mini' %>
+    <%= link_to 'Eliminar', responsible, 
+        :data => { :confirm => 'Esta Seguro?' },
+        :method => :delete, :remote => true, :class => 'btn btn-mini btn-danger' %>
+  </td>
+</tr>

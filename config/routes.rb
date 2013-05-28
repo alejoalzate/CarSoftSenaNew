@@ -1,5 +1,14 @@
 Carsoft::Application.routes.draw do
 
+  resources :authorizations
+
+
+  resources :responsibles
+
+
+  resources :area_centers
+
+
   resources :suggestions
 
 

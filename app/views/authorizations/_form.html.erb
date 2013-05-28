@@ -1,0 +1,29 @@
+<%= simple_form_for(@authorization, :html => { :class => 'form-horizontal' }, :remote => true)  do |f| %>
+
+  <%= f.error_notification %>
+  <%= display_base_errors @authorization %>
+
+  <%= f.input :name %>
+  <%= f.input :surname %>
+  <%= f.input :genre %>
+  <%= f.input :document_id %>
+  <%= f.input :identification %>
+  <%= f.input :item_description %>
+  <%= f.input :charge %>
+  <%= f.input :phone %>
+  <%= f.input :avatar %>
+  <%= f.input :repair %>
+  <%= f.input :sample_property %>
+  <%= f.input :loan %>
+  <%= f.input :seminar %>
+  <%= f.input :course_elements %>
+  <%= f.input :others %>
+  <%= f.input :date %>
+  <%= f.input :acceptance %>
+  <%= f.input :user_id %>
+  <div class="form-actions">
+    <%= f.submit "guardar", :class => 'btn btn-primary' %>
+    <%= link_to 'Atras', authorizations_path, :class => 'btn btn-small' %>
+  </div>
+<% end %>
+

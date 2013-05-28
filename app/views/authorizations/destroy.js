@@ -1,0 +1,1 @@
+$("table tr#authorization_<%= @authorization.id %>").remove();

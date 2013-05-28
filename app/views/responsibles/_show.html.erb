@@ -1,0 +1,15 @@
+<%- model_class = Responsible -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
+
+<div class='responsible'>
+  <p><%= @responsible.id %></p>
+  <p><%= @responsible.name %></p>
+  <p><%= @responsible.surname %></p>
+  <p><%= @responsible.extension %></p>
+  <p><%= @responsible.document_id %></p>
+  <p><%= @responsible.genre %></p>
+  <p><%= @responsible.area_center_id %></p>
+  <p><%= @responsible.phone %></p>
+</div>
