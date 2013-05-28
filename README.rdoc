@@ -92,7 +92,7 @@ mode. With gems, use <tt>sudo gem install ruby-debug</tt>. Example:
   class WeblogController < ActionController::Base
     def index
       @posts = Post.all
-      debugger
+      debugge
     end
   end
 
