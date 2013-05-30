@@ -38,9 +38,6 @@ Carsoft::Application.routes.draw do
   resources :parkings
 
 
-  resources :sheets
-
-
   resources :porters
 
 
