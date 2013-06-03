@@ -1,16 +1,19 @@
-<tr id=<%= "area_center_#{area_center.id}" %>>
-  <td><%= link_to area_center.id, edit_area_center_path(area_center), :remote => true %></td>
+<tr id=<%= "area_center_#{area_center.id}" %>
+  <td></td>
+  <td><%= area_center.id %></td>
   <td><%= area_center.name %></td>
   <td><%= area_center.extension %></td>
   <td><%= area_center.center_id %></td>
   <td><%= area_center.phone %></td>
   <td><%= area_center.specification %></td>
   <td>
-    <%= link_to 'Mostrar', area_center, :remote => true, :class => 'btn btn-mini' %>
-    <%= link_to 'Editar', edit_area_center_path(area_center), :remote => true,
+    <%= link_to 'Mostrar', center_area_center_path(@center, area_center), :remote => true, :class => 'btn btn-mini' %>
+    <%= link_to 'Editar', edit_center_area_center_path(@center, area_center), :remote => true,
         :class => 'btn btn-mini' %>
-    <%= link_to 'Eliminar', area_center, 
+    <%= link_to 'Eliminar', center_area_center_path(@center, area_center), 
         :data => { :confirm => 'Esta Seguro?' },
         :method => :delete, :remote => true, :class => 'btn btn-mini btn-danger' %>
+        <td><%= link_to image_tag('miembros.png', :tile => "Agregar Miembros"), area_center_responsibles_path(area_center) %></td>
   </td>
 </tr>
+  

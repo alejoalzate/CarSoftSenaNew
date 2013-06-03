@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
    before_filter :find_user, :except => [ :index, :create, :new ]
+   autocomplete :responsible, :name, :full => true
   def index
 
     if params[:registro] == nil or params[:registro] <= '0' then 

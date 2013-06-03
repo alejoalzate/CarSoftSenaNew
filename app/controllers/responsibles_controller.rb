@@ -1,6 +1,7 @@
 class ResponsiblesController < ApplicationController
-  # GET /responsibles
-  # GET /responsibles.json
+
+  before_filter :find_area_center_responsibles
+
   def index
     @responsibles = Responsible.all
 
@@ -31,6 +32,7 @@ class ResponsiblesController < ApplicationController
   # POST /responsibles.json
   def create
     @responsible = Responsible.new(params[:responsible])
+    @responsible.name = Responsible.responsible_ubicacion(@responsible.name, @area_center)
     render :action => :new unless @responsible.save
   end
 
@@ -38,7 +40,7 @@ class ResponsiblesController < ApplicationController
   # PUT /responsibles/1.json
   def update
     @responsible = Responsible.find(params[:id])
-    render :action => :edit unless @team.update_attributes(params[:responsible])
+    render :action => :edit unless @responsible.update_attributes(params[:responsible])
   end
 
   # DELETE /responsibles/1
@@ -47,4 +49,11 @@ class ResponsiblesController < ApplicationController
     @responsible = Responsible.find(params[:id])
     @responsible.destroy
   end
+
+  private
+  def find_area_center_responsibles
+     @area_center = AreaCenter.find(params[:area_center_id])
+     @responsible = Responsible.find(params[:id]) if params[:id]
+  end
+
 end

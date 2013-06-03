@@ -8,11 +8,12 @@
   <td><%= responsible.area_center_id %></td>
   <td><%= responsible.phone %></td>
   <td>
-    <%= link_to 'Mostrar', responsible, :remote => true, :class => 'btn btn-mini' %>
-    <%= link_to 'Editar', edit_responsible_path(responsible), :remote => true,
+    <%= link_to 'Mostrar', area_center_responsible_path(@area_center, responsible), :remote => true, :class => 'btn btn-mini' %>
+    <%= link_to 'Editar', edit_area_center_responsible_path(@area_center, responsible), :remote => true,
         :class => 'btn btn-mini' %>
-    <%= link_to 'Eliminar', responsible, 
+    <%= link_to 'Eliminar', area_center_responsible_path(@area_center, responsible), 
         :data => { :confirm => 'Esta Seguro?' },
         :method => :delete, :remote => true, :class => 'btn btn-mini btn-danger' %>
   </td>
 </tr>
+  

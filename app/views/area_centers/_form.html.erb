@@ -1,4 +1,4 @@
-<%= simple_form_for(@area_center, :html => { :class => 'form-horizontal' }, :remote => true) do |f| %>
+<%= simple_form_for([@center, @area_center], :html => { :class => 'form-horizontal' }, :remote => true) do |f| %>
 
   <%= f.error_notification %>
   <%= display_base_errors @area_center %>
@@ -10,7 +10,7 @@
   <%= f.input :specification %>
   <div class="form-actions">
     <%= f.submit "guardar", :class => 'btn btn-primary' %>
-    <%= link_to 'Atras', area_centers_path, :class => 'btn btn-small' %>
+    <%= link_to 'Atras', center_area_centers_path, :class => 'btn btn-small' %>
   </div>
 <% end %>
 

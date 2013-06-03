@@ -39,7 +39,10 @@
 
            <div class="span6"><%= f.input :identification, :label => "Identidad",  :required => true  %></div>
 
-             
+        </div>
+         <div class="row-fluid">
+           <div class="span6"><%= f.input :responsible_name, :url => autocomplete_responsible_name_users_path, :as => :autocomplete, :id_element => '#id' %>
+        </div>
                
           
           <div class="span6"><%= f.label :rol_id, :label => "Roles",  :required => true %>

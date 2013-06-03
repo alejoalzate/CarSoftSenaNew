@@ -11,6 +11,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :address_residence
       t.string :phone
       t.string :movil
+      t.references :responsible
       t.references :document
       t.references :rh
       t.references :rol
@@ -18,6 +19,8 @@ class CreateUsers < ActiveRecord::Migration
 
       t.timestamps
     end
+
+    add_index :users, :responsible_id
     add_index :users, :document_id
     add_index :users, :rh_id
     add_index :users, :rol_id

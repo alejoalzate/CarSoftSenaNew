@@ -1,6 +1,8 @@
 class AreaCentersController < ApplicationController
-  # GET /area_centers
-  # GET /area_centers.json
+ 
+  before_filter :find_center_area_centers
+  before_filter :find_area_center, :except => [ :index, :create, :new ]
+
   def index
     @area_centers = AreaCenter.all
 
@@ -38,7 +40,7 @@ class AreaCentersController < ApplicationController
   # PUT /area_centers/1.json
   def update
     @area_center = AreaCenter.find(params[:id])
-    render :action => :edit unless @team.update_attributes(params[:area_center])
+    render :action => :edit unless @area_center.update_attributes(params[:area_center])
   end
 
   # DELETE /area_centers/1
@@ -47,4 +49,14 @@ class AreaCentersController < ApplicationController
     @area_center = AreaCenter.find(params[:id])
     @area_center.destroy
   end
+  private
+  def find_area_center
+      @area_center = AreaCenter.find(params[:id]) if params[:id]
+  end
+
+  private
+  def find_center_area_centers
+     @center = Center.find(params[:center_id])
+     @area_center = AreaCenter.find(params[:id]) if params[:id]
+  end  
 end

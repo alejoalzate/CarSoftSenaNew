@@ -12,10 +12,17 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
+//= require autocomplete-rails
 //= require twitter/bootstrap
 //= require bootstrap
 //= require lazybox
 //= require_tree .
+
+$('#my_autocomplete_field').bind('railsAutocomplete.select', function(event, data){
+  /* Do something here */
+  alert(data.item.id);
+});
 
 
 $(document).ready(function() {

@@ -13,6 +13,7 @@ group :assets do
 	gem 'twitter-bootstrap-rails'
 	gem 'uglifier', '>= 1.0.3'
 	gem 'will_paginate'
+	gem 'rails3-jquery-autocomplete'
 	gem 'bootstrap-will_paginate'
   	gem 'uglifier', '>= 1.0.3'
 end
@@ -20,4 +21,3 @@ gem 'jquery-rails'
 gem 'simple_form'
 gem 'lazybox'
 gem 'thin'
-

@@ -8,5 +8,8 @@
           :class => 'btn btn-mini'%>
         <%= link_to image_tag('eliminar.png', :title => "Eliminar Equipos"), center, :data => { :confirm => 'Esta Seguro?' },
           :method => :delete, :remote => true, :class => 'btn btn-mini btn-danger' %>
+
+        <td><%= link_to image_tag('miembros.png', :tile => "Agregar Miembros"), center_area_centers_path(center) %></td>
+      
     </td>
 </tr>

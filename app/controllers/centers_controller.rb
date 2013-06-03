@@ -1,4 +1,6 @@
 class CentersController < ApplicationController
+  before_filter :find_center, :except => [ :index, :create, :new ]
+
   def index
    if params[:registro] == nil or params[:registro] <= '0' then 
         params[:registro] = 2 
@@ -36,6 +38,11 @@ class CentersController < ApplicationController
   def destroy
       @center = Center.find(params[:id])
       @center.destroy
+  end
+  
+  private
+  def find_center
+      @center = Center.find(params[:id]) if params[:id]
   end
   
 end
