@@ -157,7 +157,7 @@ The default directory structure of a generated Ruby on Rails application:
 
   |-- app
   |   |-- assets
-  |   |   |-- images
+  |   |   |-- image
   |   |   |-- javascripts
   |   |   `-- stylesheets
   |   |-- controllers
