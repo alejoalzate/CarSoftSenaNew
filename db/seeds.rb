@@ -107,3 +107,23 @@ TypeUser.create(name: "Administrador", acronym: "ADM", description: "Acceso tota
 TypeUser.create(name: "Guarda", acronym: "GRD", description: "Acceso de escritura Crear,Mostrar")
 TypeUser.create(name: "Usuario", acronym: "USR", description: "Acceso con menos privilejios")
 
+TypeVehicle.create(name: "Automovil", description: "Vehiculo pequeño para el ingreso de pocas personas")
+TypeVehicle.create(name: "Camioneta", description: "Vehiculo medio para transportar una mayor cantidad de personas u objetos")
+TypeVehicle.create(name: "Camion Liviano", description: "Vehiculo para el ingreso de materiales livianos")
+TypeVehicle.create(name: "Camion", description: "Vehiculo grande para ingresar materiales pesados")
+TypeVehicle.create(name: "Bicicleta", description: "Medio de transporte de proplsion humana utilizado por una persona")
+TypeVehicle.create(name: "Motocicleta", description: "Vehiculo de 2 ruedas destinado para transportar maximo 2 personas")
+TypeVehicle.create(name: "Vehiculo Particular", description: "Vehiculo de transporte como por ejemplo un taxi")
+TypeVehicle.create(name: "Vehiculo de abastecimiento", description: "Vehiculo utilizado para ingresar materia prima dentro de las instalaciones")
+
+Area.create(name: "Zona a", description: "Area perteneciente al centro de centro de mobiliario")
+Area.create(name: "Zona b", description: "Area perteneciente al centro de centro de mobiliario")
+Area.create(name: "Zona c", description: "Area perteneciente al centro de centro de mobiliario")
+Area.create(name: "Zona d", description: "Area perteneciente al centro de Diseño y Manufactura del Cuero")
+Area.create(name: "Zona e", description: "Area perteneciente al centro de Diseño y Manufactura del Cuero")
+Area.create(name: "Zona f", description: "Area perteneciente al centro de Diseño y Manufactura del Cuero")
+Area.create(name: "Zona g", description: "Area perteneciente al centro de diseño confeccion y moda")
+Area.create(name: "Zona h", description: "Area perteneciente al centro de diseño confeccion y moda")
+Area.create(name: "Zona i", description: "Area perteneciente al centro de diseño confeccion y moda")
+
+
