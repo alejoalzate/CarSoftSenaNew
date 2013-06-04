@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130528162711) do
+ActiveRecord::Schema.define(:version => 20130604012654) do
 
   create_table "answers", :force => true do |t|
     t.string   "answer"
@@ -61,8 +61,12 @@ ActiveRecord::Schema.define(:version => 20130528162711) do
     t.date     "date"
     t.boolean  "acceptance"
     t.integer  "user_id"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   add_index "authorizations", ["document_id"], :name => "index_authorizations_on_document_id"
@@ -164,8 +168,12 @@ ActiveRecord::Schema.define(:version => 20130528162711) do
     t.string   "address"
     t.string   "phone"
     t.integer  "turn_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   add_index "porters", ["turn_id"], :name => "index_porters_on_turn_id"
@@ -356,8 +364,12 @@ ActiveRecord::Schema.define(:version => 20130528162711) do
     t.integer  "rh_id"
     t.integer  "rol_id"
     t.integer  "type_user_id"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   add_index "users", ["document_id"], :name => "index_users_on_document_id"

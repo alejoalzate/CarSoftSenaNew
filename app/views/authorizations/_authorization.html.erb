@@ -18,6 +18,7 @@
   <td><%= authorization.date %></td>
   <td><%= authorization.acceptance %></td>
   <td><%= authorization.user_id %></td>
+  <td><%= authorization.avatar_file_name %></td>
   <td>
     <%= link_to 'Mostrar', authorization, :remote => true, :class => 'btn btn-mini' %>
     <%= link_to 'Editar', edit_authorization_path(authorization), :remote => true,

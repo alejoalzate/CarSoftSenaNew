@@ -21,6 +21,8 @@
   <%= f.input :date %>
   <%= f.input :acceptance %>
   <%= f.input :user_id %>
+  <%= f.label :avatar %>
+  <%= f.file_field :avatar %>
   <div class="form-actions">
     <%= f.submit "guardar", :class => 'btn btn-primary' %>
     <%= link_to 'Atras', authorizations_path, :class => 'btn btn-small' %>

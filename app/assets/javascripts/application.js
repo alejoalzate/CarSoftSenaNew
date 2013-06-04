@@ -17,6 +17,7 @@
 //= require twitter/bootstrap
 //= require bootstrap
 //= require lazybox
+//= require jquery.remotipart
 //= require_tree .
 
 $('#my_autocomplete_field').bind('railsAutocomplete.select', function(event, data){

@@ -16,8 +16,10 @@ group :assets do
 	gem 'rails3-jquery-autocomplete'
 	gem 'bootstrap-will_paginate'
   	gem 'uglifier', '>= 1.0.3'
+  	gem 'paperclip'
 end
 gem 'jquery-rails'
 gem 'simple_form'
 gem 'lazybox'
 gem 'thin'
+gem 'remotipart'

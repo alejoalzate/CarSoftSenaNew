@@ -20,6 +20,7 @@
 	    	</thead>
 	    	<tbody>
 	    		<tr class="warning">
+	    			<td><p><%= image_tag @user.avatar.url(:thumb) %></p></td>
 	    			<td><p><%= @user.id  %></p></td>
 				    <td><p><%= @user.name  %></p></td>
 				    <td><p><%= @user.surname %></p></td>

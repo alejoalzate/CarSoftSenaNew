@@ -9,6 +9,8 @@
     <p><%= f.input :phone, :label => "Telefono",  :required => true   %></p>
     <p><%= f.label :turn_id, :label => "Turno",  :required => true   %>
     <%= f.collection_select :turn_id, Turn.all, :id, :day %></p>
+    <p><%= f.label :avatar %>
+    <%= f.file_field :avatar %></p>
 
     <div class="form-actions">
       <%= f.submit "guardar", :class => 'btn btn-primary' %>

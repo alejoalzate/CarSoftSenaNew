@@ -52,6 +52,8 @@
             <div class="row-fluid">
          <div class="span6"><%= f.input :address_residence, :label => "Direccion",  :required => true  %></div>
           <div class="span6"><%= f.input :finger_print %></div>
+            <%= f.label :avatar %>
+            <%= f.file_field :avatar %>
         </div>
       </div>
     </div>
