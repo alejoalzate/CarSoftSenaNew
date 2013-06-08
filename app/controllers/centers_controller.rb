@@ -1,4 +1,5 @@
 class CentersController < ApplicationController
+   before_filter :require_login
   before_filter :find_center, :except => [ :index, :create, :new ]
 
   def index

@@ -1,5 +1,5 @@
 class ProgramsController < ApplicationController
-
+ before_filter :require_login
   def index
      if params[:registro] == nil or params[:registro] <= '0' then 
         params[:registro] = 2 

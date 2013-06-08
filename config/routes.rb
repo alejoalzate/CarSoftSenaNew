@@ -1,23 +1,38 @@
 Carsoft::Application.routes.draw do
+  get "sessions/new"
+
+  get "users/new"
+
   resources :authorizations
 
   resources :suggestions
 
     resources :users do
-    get :autocomplete_responsible_name, :on => :collection
     resources :vehicles
     resources :teams
     resources :materials
     resources :modify_users
   end
- 
+  
+  get "activate" => 'activations#create'
+  
   root :to => "pages#home"
 
   get "pages/home"
   get "pages/about"
   get "pages/admin"
-  get  "admin2" => "pages#admin2", :as => "admin2"
   get "about" => "pages#about", :as => "about"
+  get "logout" => "sessions#destroy", :as => "logout"
+  get "login"  => "sessions#new", :as => "login"
+  get "signup" => "users#new", :as => "signup"
+
+
+  resources :sessions, :only => [:new, :create, :destroy]
+
+  resource :password_resets, :controller => "password_resets" #, :only => [:new, :edit]
+
+  
+  resources :sessions
 
   resources :records
 
@@ -39,7 +54,7 @@ Carsoft::Application.routes.draw do
 
   resources :programs
 
-  resources :rols
+  resources :roles
 
   resources :type_users
 

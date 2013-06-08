@@ -1,3 +1,4 @@
+
 <%= simple_form_for(@user, :html => { :class => 'form-horizontal' }, :remote => true) do |f| %>
     <%= f.error_notification %>
     <%= display_base_errors @user %>
@@ -7,60 +8,74 @@
       <div class="row-fluid">
           <div class="span6"><%= f.label :type_user_id, :label => "Tipo Usuario",  :required => true %>
              <%= f.collection_select :type_user_id, TypeUser.all, :id, :name, :prompt => "Tipo Usuarios"   %></div>
-       <div class="span6"><%= f.input :phone, :label => "Telefono",  :required => true  %></div>
+       
+
+        <div class="span6"><%= f.input :movil, :label => "Celular",  :required => true  %></div>
 
         </div>
         <div class="row-fluid">
-          <div class="span6"><%= f.input :name, :label => "Nombre",  :required => true  %></div>
-          <div class="span6"><%= f.input :movil, :label => "Celular",  :required => true  %></div>
-        </div>
-         <div class="row-fluid">
-          <div class="span6"><%= f.input :surname, :label => "Apellido",  :required => true  %></div>
-
-         <div class="span6"><%= f.label :rh_id, :label => "Rh",  :required => true %>
+          <div class="span6"><%= f.input :name, :label => "Nombre Completo",  :required => true  %></div>
+          
+           <div class="span6"><%= f.label :rh_id, :label => "Rh",  :required => true %>
            <%= f.collection_select :rh_id , Rh.all, :id, :name, :prompt => "Selecion Rhs"   %>
           </div>
+        </div>
+         <div class="row-fluid">
+         	<div class="span6"><%= f.input :gender, :as => :radio, :label => "Genero", :collection => [["Masculino", false], ["Femenino", true]] %></div>
+         
+
+     
+        
 
         </div>
        
         </div>
          <div class="row-fluid">
-           <div class="span6"><%= f.input :female, :as => :radio, :label => "Genero", :collection => [["Masculino", false], ["Femenino", true]] %></div>
+           
+            <div class="span6"><%= f.label :document_id, :label => "Documento",  :required => true %>
+            <%= f.collection_select :document_id , Document.all, :id, :name, :prompt => "Tipo Documentos"  %>
+          </div>
  <div class="span6"><%= f.input :email, :label => "email",  :required => true  %></div>
         </div>
          <div class="row-fluid">
-           <div class="span6"><%= f.label :document_id, :label => "Documento",  :required => true %>
-            <%= f.collection_select :document_id , Document.all, :id, :name, :prompt => "Tipo Documentos"  %>
-          </div>
-         
-         <div class="span6"><%= f.input :key, :label => "Password",  :required => true %></div>
-        </div>
-            <div class="row-fluid">
-
-           <div class="span6"><%= f.input :identification, :label => "Identidad",  :required => true  %></div>
-
-        </div>
-         <div class="row-fluid">
-           <div class="span6"><%= f.input :responsible_name, :url => autocomplete_responsible_name_users_path, :as => :autocomplete, :id_element => '#id' %>
-        </div>
-               
+         	 <div class="span6"><%= f.input :identification, :label => "Identidad",  :required => true  %></div>
           
-          <div class="span6"><%= f.label :rol_id, :label => "Roles",  :required => true %>
-             <%= f.collection_select :rol_id , Rol.all, :id, :name, :prompt => "Selecion Rol"   %>
-          </div>
+         
+         <div class="span6"><%= f.input :password, :label => "Password",  :required => true %></div>
         </div>
             <div class="row-fluid">
-         <div class="span6"><%= f.input :address_residence, :label => "Direccion",  :required => true  %></div>
-          <div class="span6"><%= f.input :finger_print %></div>
-            <%= f.label :avatar %>
-            <%= f.file_field :avatar %>
+            	   <div class="span6"><%= f.input :address_residence, :label => "Direccion",  :required => true  %></div>
+
+              <div class="span6"><%= f.input :password_confirmation, :label => "Confirmar password",  :required => true  %></div>
+        </div>
+            <div class="row-fluid">
+         
+          <div class="span6"><%= f.input :phone, :label => "Telefono",  :required => true  %></div>
+          <div class="span6"></div>
         </div>
       </div>
     </div>
   </div>
 </div>  
-    <div class="form-actions">
-      <%= f.submit "guardar", :class => 'btn btn-primary' %>
-      <%= link_to 'Atras', users_path, :class => 'btn btn-small ' %>
-    </div>
-<% end %>
+    <% if  can? :update, User %>
+          <div class="well well-small">
+             <% for role in Role.all %>
+                   <%= check_box_tag "user[role_ids][]", role.id, @user.roles.include?(role) %>
+                   <%= role.name %>
+                   <% if role.id % 4 == 0 %> 
+                         <br>
+                   <% end %>
+             <% end %>
+             <%= hidden_field_tag "user[role_ids][]", "" %>
+          </div>
+      <% end %>
+
+      <div class="modal-footer">
+          <%= f.submit "guardar", :class => 'btn btn-primary' %>
+        
+      </div>
+      
+    <% end %>
+     
+
+

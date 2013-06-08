@@ -1,5 +1,5 @@
 class ResponsiblesController < ApplicationController
-
+   before_filter :require_login
   before_filter :find_area_center_responsibles
 
   def index

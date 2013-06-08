@@ -19,15 +19,11 @@
       <thead>
         <tr>
           <th>id</th>
-          <th>Nombres</th>
-          <th>Apellidos</th>
-          <th>avatar</th>
-          <th>Identificaciones</th>
-          <th>emails</th>
-          <th>Dirreciones</th>
-          <th>Telefonos</th>
-          <th>Celulars</th>
-          <th>Acciones</th>
+          <th>Nombre</th>
+          <th>Identificacion</th>
+          <th>Direccion</th>
+          <th>Telefono</th>
+          <th>Celular</th>
         </tr>
       </thead>
       <tbody>
@@ -35,7 +31,9 @@
       </tbody>
       <tfoot>
         <tr>
-          <td><%= link_to image_tag('nuevousuario.png'),  new_user_path,  :remote => true,  :rel => "tooltip", :title => "Ingresar Nuevos Usuarios", :class => "btn btn-mini " %></td>
+          <td><%= link_to 'Agregar', new_user_path, :class => "btn btn-primary", 
+        :remote => true if can? :create, User %></td>
+
         </tr>
       </tfoot>
       <tfoot>

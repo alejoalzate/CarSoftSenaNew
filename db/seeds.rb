@@ -76,32 +76,22 @@ Program.all.each do |program|
 	end
 end
 
-Category.create(name: "Preguntas Abiertas")
-Category.create(name: "Preguntas Reflexivas")
-Category.create(name: "Preguntas Directivas")
-Category.create(name: "Preguntas De Opcion multiple")
-Category.create(name: "Preguntas Cerradas")
 
-Category.all.each do |category|
+
+Role.create(name: "Funcionarios", acronym: "FCN")
+Role.create(name: "Contratistas", acronym: "CNT")
+Role.create(name: "Aprendices", acronym: "APD")
+Role.create(name: "Visitantes", acronym: "VST")
+
+Role.all.each do |rol|
 
 		10.times do |i|
-		Category.create(name: "Categoria #{i}")
+		Role.create(name: "Role #{i}")
 
 	end
 end
 
-Rol.create(name: "Funcionarios", acronym: "FCN")
-Rol.create(name: "Contratistas", acronym: "CNT")
-Rol.create(name: "Aprendices", acronym: "APD")
-Rol.create(name: "Visitantes", acronym: "VST")
 
-Rol.all.each do |rol|
-
-		10.times do |i|
-		Rol.create(name: "Rol #{i}")
-
-	end
-end
 
 TypeUser.create(name: "Administrador", acronym: "ADM", description: "Acceso total a la aplicacion Crear,Mostrar,Actualizar,Eliminar")
 TypeUser.create(name: "Guarda", acronym: "GRD", description: "Acceso de escritura Crear,Mostrar")

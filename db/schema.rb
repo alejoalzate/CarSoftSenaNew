@@ -11,17 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130604012654) do
-
-  create_table "answers", :force => true do |t|
-    t.string   "answer"
-    t.string   "letter"
-    t.integer  "question_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-  end
-
-  add_index "answers", ["question_id"], :name => "index_answers_on_question_id"
+ActiveRecord::Schema.define(:version => 20130605162531) do
 
   create_table "area_centers", :force => true do |t|
     t.string   "name"
@@ -40,6 +30,14 @@ ActiveRecord::Schema.define(:version => 20130604012654) do
     t.string   "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "assignments", :force => true do |t|
+    t.string   "name"
+    t.integer  "rh_id"
+    t.integer  "role_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "authorizations", :force => true do |t|
@@ -72,12 +70,6 @@ ActiveRecord::Schema.define(:version => 20130604012654) do
   add_index "authorizations", ["document_id"], :name => "index_authorizations_on_document_id"
   add_index "authorizations", ["user_id"], :name => "index_authorizations_on_user_id"
 
-  create_table "categories", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "center_programs", :force => true do |t|
     t.integer  "center_id"
     t.integer  "user_id"
@@ -99,33 +91,12 @@ ActiveRecord::Schema.define(:version => 20130604012654) do
 
   add_index "centers", ["code_id"], :name => "index_centers_on_code_id"
 
-  create_table "codes", :force => true do |t|
-    t.string   "code"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "documents", :force => true do |t|
     t.string   "name"
     t.string   "initials"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
-
-  create_table "format_surveys", :force => true do |t|
-    t.string   "name"
-    t.integer  "user_id"
-    t.integer  "survey_id"
-    t.integer  "answer_id"
-    t.integer  "question_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-  end
-
-  add_index "format_surveys", ["answer_id"], :name => "index_format_surveys_on_answer_id"
-  add_index "format_surveys", ["question_id"], :name => "index_format_surveys_on_question_id"
-  add_index "format_surveys", ["survey_id"], :name => "index_format_surveys_on_survey_id"
-  add_index "format_surveys", ["user_id"], :name => "index_format_surveys_on_user_id"
 
   create_table "materials", :force => true do |t|
     t.string   "name"
@@ -188,17 +159,6 @@ ActiveRecord::Schema.define(:version => 20130604012654) do
 
   add_index "programs", ["center_id"], :name => "index_programs_on_center_id"
 
-  create_table "questions", :force => true do |t|
-    t.string   "description"
-    t.integer  "score"
-    t.string   "letter"
-    t.integer  "category_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-  end
-
-  add_index "questions", ["category_id"], :name => "index_questions_on_category_id"
-
   create_table "records", :force => true do |t|
     t.date     "date"
     t.time     "time"
@@ -239,19 +199,6 @@ ActiveRecord::Schema.define(:version => 20130604012654) do
   add_index "responsibles", ["area_center_id"], :name => "index_responsibles_on_area_center_id"
   add_index "responsibles", ["document_id"], :name => "index_responsibles_on_document_id"
 
-  create_table "results", :force => true do |t|
-    t.integer  "answer_id"
-    t.integer  "question_id"
-    t.integer  "user_id"
-    t.boolean  "ok"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-  end
-
-  add_index "results", ["answer_id"], :name => "index_results_on_answer_id"
-  add_index "results", ["question_id"], :name => "index_results_on_question_id"
-  add_index "results", ["user_id"], :name => "index_results_on_user_id"
-
   create_table "rhs", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
@@ -264,15 +211,6 @@ ActiveRecord::Schema.define(:version => 20130604012654) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
-
-  create_table "sheets", :force => true do |t|
-    t.string   "code"
-    t.integer  "program_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  add_index "sheets", ["program_id"], :name => "index_sheets_on_program_id"
 
   create_table "suggestions", :force => true do |t|
     t.string   "name"
@@ -289,15 +227,6 @@ ActiveRecord::Schema.define(:version => 20130604012654) do
 
   add_index "suggestions", ["document_id"], :name => "index_suggestions_on_document_id"
   add_index "suggestions", ["user_id"], :name => "index_suggestions_on_user_id"
-
-  create_table "surveys", :force => true do |t|
-    t.integer  "user_id"
-    t.string   "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-  end
-
-  add_index "surveys", ["user_id"], :name => "index_surveys_on_user_id"
 
   create_table "teams", :force => true do |t|
     t.string   "name"
@@ -349,33 +278,29 @@ ActiveRecord::Schema.define(:version => 20130604012654) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "name"
-    t.string   "surname"
-    t.string   "finger_print"
-    t.boolean  "female"
-    t.string   "identification"
-    t.string   "key"
     t.string   "email"
+    t.string   "crypted_password"
+    t.string   "salt"
+    t.string   "name"
+    t.boolean  "gender"
+    t.string   "identification"
     t.string   "address_residence"
     t.string   "phone"
     t.string   "movil"
-    t.integer  "responsible_id"
     t.integer  "document_id"
     t.integer  "rh_id"
-    t.integer  "rol_id"
+    t.integer  "role_id"
     t.integer  "type_user_id"
-    t.datetime "created_at",          :null => false
-    t.datetime "updated_at",          :null => false
-    t.string   "avatar_file_name"
-    t.string   "avatar_content_type"
-    t.integer  "avatar_file_size"
-    t.datetime "avatar_updated_at"
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
+    t.string   "remember_me_token"
+    t.datetime "remember_me_token_expires_at"
   end
 
   add_index "users", ["document_id"], :name => "index_users_on_document_id"
-  add_index "users", ["responsible_id"], :name => "index_users_on_responsible_id"
+  add_index "users", ["remember_me_token"], :name => "index_users_on_remember_me_token"
   add_index "users", ["rh_id"], :name => "index_users_on_rh_id"
-  add_index "users", ["rol_id"], :name => "index_users_on_rol_id"
+  add_index "users", ["role_id"], :name => "index_users_on_role_id"
   add_index "users", ["type_user_id"], :name => "index_users_on_type_user_id"
 
   create_table "vehicles", :force => true do |t|

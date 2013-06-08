@@ -1,4 +1,5 @@
 class MaterialsController < ApplicationController
+   before_filter :require_login
    before_filter :find_user_materials
   def index
     if params[:registro] == nil or params[:registro] <= '0' then 

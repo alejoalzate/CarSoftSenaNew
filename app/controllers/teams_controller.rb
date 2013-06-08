@@ -1,4 +1,5 @@
 class TeamsController < ApplicationController
+   before_filter :require_login
   before_filter :find_user_teams
    def index
     if params[:registro] == nil or params[:registro] <= '0' then 

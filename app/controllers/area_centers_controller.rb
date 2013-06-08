@@ -1,5 +1,5 @@
 class AreaCentersController < ApplicationController
- 
+   before_filter :require_login
   before_filter :find_center_area_centers
   before_filter :find_area_center, :except => [ :index, :create, :new ]
 

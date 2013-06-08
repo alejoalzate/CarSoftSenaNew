@@ -1,4 +1,5 @@
 class ModifyUsersController < ApplicationController
+   before_filter :require_login
   before_filter :find_user_modify_users
  
   def index
