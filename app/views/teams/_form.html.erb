@@ -11,11 +11,10 @@
         <%= f.collection_select :type_material_id, TypeMaterial.all, :id, :name, :prompt => "Selecion Tipo Material" %></p>
    <p><%= f.label :porter_id, :label => "Portero",  :required => true   %>
     	<%= f.collection_select :porter_id,  Porter.all, :id, :name, :prompt => "Selecion Portero Registro" %></p>
-    	<p><%= f.input :mouse, :label => "Mouse",  :required => true   %></p>
-    <p><%= f.input :charger, :label => "Cargador",  :required => true   %></p>
-    
+    	<p><%= f.input :accessory, :as => :radio, :label => "Accesorio", :collection => [["Mouse", false], ["Cargador", true]] %></p>
+                   
     <div class="form-actions">
       <%= f.submit "guardar", :class => 'btn btn-primary' %>
-       <%= link_to 'Atras',  user_teams_path, :class => 'btn btn-small' %>
+       <a href="#" class="btn" onclick="$.lazybox.close()">Cerrar</a>
     </div>
 <% end %>

@@ -151,13 +151,10 @@ ActiveRecord::Schema.define(:version => 20130605162531) do
 
   create_table "programs", :force => true do |t|
     t.string   "name"
-    t.integer  "center_id"
-    t.string   "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.string   "code"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
-
-  add_index "programs", ["center_id"], :name => "index_programs_on_center_id"
 
   create_table "records", :force => true do |t|
     t.date     "date"
@@ -205,7 +202,7 @@ ActiveRecord::Schema.define(:version => 20130605162531) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "rols", :force => true do |t|
+  create_table "roles", :force => true do |t|
     t.string   "name"
     t.string   "acronym"
     t.datetime "created_at", :null => false
@@ -231,8 +228,7 @@ ActiveRecord::Schema.define(:version => 20130605162531) do
   create_table "teams", :force => true do |t|
     t.string   "name"
     t.string   "serial"
-    t.boolean  "mouse"
-    t.boolean  "charger"
+    t.boolean  "accessory"
     t.string   "color"
     t.integer  "type_material_id"
     t.integer  "porter_id"
@@ -291,6 +287,7 @@ ActiveRecord::Schema.define(:version => 20130605162531) do
     t.integer  "rh_id"
     t.integer  "role_id"
     t.integer  "type_user_id"
+    t.integer  "program_id"
     t.datetime "created_at",                   :null => false
     t.datetime "updated_at",                   :null => false
     t.string   "remember_me_token"
@@ -298,6 +295,7 @@ ActiveRecord::Schema.define(:version => 20130605162531) do
   end
 
   add_index "users", ["document_id"], :name => "index_users_on_document_id"
+  add_index "users", ["program_id"], :name => "index_users_on_program_id"
   add_index "users", ["remember_me_token"], :name => "index_users_on_remember_me_token"
   add_index "users", ["rh_id"], :name => "index_users_on_rh_id"
   add_index "users", ["role_id"], :name => "index_users_on_role_id"

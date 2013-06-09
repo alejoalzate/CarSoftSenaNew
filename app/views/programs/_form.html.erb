@@ -5,14 +5,11 @@
     
     <p><%= f.input :name, :label => "Nombre",  :required => true    %></p>
     
-    <p><%= f.label :center_id, :label => "Centro",  :required => true   %>
-    <%= f.collection_select :center_id, Center.all, :id, :name %></p>
-
-    <p><%= f.input :description, :label => "Descripciones",  :required => true    %></p>
+    <p><%= f.input :code, :label => "Ficha",  :required => true    %></p>
   
     <div class="form-actions">
       <%= f.submit "guardar", :class => 'btn btn-primary' %>
-      <%= link_to 'Atras', programs_path, :class => 'btn btn-small' %>
+      <a href="#" class="btn" onclick="$.lazybox.close()">Cerrar</a>
     </div>
 <% end %>
 

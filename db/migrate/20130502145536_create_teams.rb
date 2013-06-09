@@ -3,8 +3,7 @@ class CreateTeams < ActiveRecord::Migration
     create_table :teams do |t|
       t.string :name
       t.string :serial
-      t.boolean :mouse
-      t.boolean :charger
+      t.boolean :accessory
       t.string :color
       t.references :type_material
       t.references :porter

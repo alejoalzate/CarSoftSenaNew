@@ -1,0 +1,50 @@
+<div id='admin' class="page-header">
+  <h3>Administración-2 </h3>
+</div>
+
+<div id='tab' class="well">
+
+    <table id='tab'  class="table table-striped">
+      <thead>
+        <tr>
+          <th>Maestra</th>
+          <th>Descripción</th>
+        </tr>
+      </thead>
+
+      <tbody>
+         <tr>
+             <td><%= link_to "Programas", programs_path %></td>
+             <td> Administración de los usuarios del Sistema</td>
+         </tr>
+         <tr>
+             <td><%= link_to "Centros", centers_path %></td>
+             <td>  centros del complejo sur del SENA</td>
+         </tr>
+         <tr>
+             <td><%= link_to "Roles", roles_path %></td>
+             <td>Roles</td>
+         </tr>
+         <tr>
+             <td><%= link_to "Rhs", rhs_path %></td>
+             <td>Equipos </td>
+         </tr>
+         <tr>
+             <td><%= link_to "Tipos Documentos", documents_path %></td>
+             <td>Tipos Documentos</td>
+         </tr>
+         <tr>
+             <td><%= link_to "Materiales", materials_path %></td>
+             <td>Tipos de materiales</td>
+         </tr>
+         <tr>
+             <td><%= link_to "Sugerencias", suggestions_path %></td>
+             <td>Departamentos</td>
+         </tr>
+      </tbody>
+
+    </table>
+  <div id='img'>
+        <%= link_to image_tag('next.png', :title=>'Siguiente', :width=>'30'),admin2_path  %>
+        </div>
+</div>

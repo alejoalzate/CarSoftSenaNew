@@ -1,7 +1,6 @@
 class Program < ActiveRecord::Base
-  belongs_to :center
-  attr_accessible :description, :name, :center_id
+  attr_accessible :name, :code
    	def self.search(search)
-		where("description like '%#{search}%' or name like '%#{search}%'")
+		where("name like '%#{search}%' or code like '%#{search}%'")
 	end
 end

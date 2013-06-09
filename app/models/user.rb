@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation
   attr_accessible :address_residence, :gender
   attr_accessible :identification, :movil, :name, :phone
-  attr_accessible :document_id, :rh_id, :role_ids, :type_user_id, :role_id
+  attr_accessible :document_id, :rh_id, :role_ids, :type_user_id, :role_id, :program_id
 
   validates_confirmation_of :password
   validates_presence_of :password, :on => :create
@@ -25,6 +25,7 @@ class User < ActiveRecord::Base
   belongs_to :rh
   belongs_to :role_id
   belongs_to :type_user
+  belongs_to :program_id
 
   def self.search(search)
 		where("name like '%#{search}%' or identification like '%#{search}%' or address_residence like '%#{search}%'
