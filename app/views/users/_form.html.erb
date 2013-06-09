@@ -23,8 +23,7 @@
          <div class="row-fluid">
          	<div class="span6"><%= f.input :gender, :as => :radio, :label => "Genero", :collection => [["Masculino", false], ["Femenino", true]] %></div>
          
-          <div class="span6"><%= f.label :program_id, :label => "Programas",  :required => true %>
-             <%= f.collection_select :program_id , Program.all, :id, :name, :prompt => "Selecion Programas"   %>
+          <div class="span6">
           </div>
      
         

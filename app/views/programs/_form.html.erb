@@ -6,6 +6,9 @@
     <p><%= f.input :name, :label => "Nombre",  :required => true    %></p>
     
     <p><%= f.input :code, :label => "Ficha",  :required => true    %></p>
+
+    <p><%= f.label :user_id, :label => "Usuarios",  :required => true   %>
+    	<%= f.collection_select :user_id,  User.all, :id, :name, :prompt => "Usuarios pernece programas" %></p>
   
     <div class="form-actions">
       <%= f.submit "guardar", :class => 'btn btn-primary' %>
