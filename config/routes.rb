@@ -41,9 +41,6 @@ Carsoft::Application.routes.draw do
   resources :sessions
 
   resources :records
-
-  resources :center_programs
-
   resources :materials
 
   resources :parkings

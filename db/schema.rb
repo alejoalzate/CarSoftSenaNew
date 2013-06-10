@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(:version => 20130605162531) do
 
   create_table "assignments", :force => true do |t|
     t.string   "name"
-    t.integer  "rh_id"
+    t.integer  "user_id"
     t.integer  "role_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
@@ -69,18 +69,6 @@ ActiveRecord::Schema.define(:version => 20130605162531) do
 
   add_index "authorizations", ["document_id"], :name => "index_authorizations_on_document_id"
   add_index "authorizations", ["user_id"], :name => "index_authorizations_on_user_id"
-
-  create_table "center_programs", :force => true do |t|
-    t.integer  "center_id"
-    t.integer  "user_id"
-    t.integer  "program_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  add_index "center_programs", ["center_id"], :name => "index_center_programs_on_center_id"
-  add_index "center_programs", ["program_id"], :name => "index_center_programs_on_program_id"
-  add_index "center_programs", ["user_id"], :name => "index_center_programs_on_user_id"
 
   create_table "centers", :force => true do |t|
     t.string   "name"
@@ -152,9 +140,12 @@ ActiveRecord::Schema.define(:version => 20130605162531) do
   create_table "programs", :force => true do |t|
     t.string   "name"
     t.string   "code"
+    t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  add_index "programs", ["user_id"], :name => "index_programs_on_user_id"
 
   create_table "records", :force => true do |t|
     t.date     "date"
@@ -287,7 +278,6 @@ ActiveRecord::Schema.define(:version => 20130605162531) do
     t.integer  "rh_id"
     t.integer  "role_id"
     t.integer  "type_user_id"
-    t.integer  "program_id"
     t.datetime "created_at",                   :null => false
     t.datetime "updated_at",                   :null => false
     t.string   "remember_me_token"
@@ -295,7 +285,6 @@ ActiveRecord::Schema.define(:version => 20130605162531) do
   end
 
   add_index "users", ["document_id"], :name => "index_users_on_document_id"
-  add_index "users", ["program_id"], :name => "index_users_on_program_id"
   add_index "users", ["remember_me_token"], :name => "index_users_on_remember_me_token"
   add_index "users", ["rh_id"], :name => "index_users_on_rh_id"
   add_index "users", ["role_id"], :name => "index_users_on_role_id"

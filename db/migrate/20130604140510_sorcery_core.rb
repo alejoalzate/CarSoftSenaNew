@@ -14,7 +14,7 @@ class SorceryCore < ActiveRecord::Migration
       t.references :rh
       t.references :role
       t.references :type_user
-      t.references :program
+    
 
       t.timestamps
     end
@@ -22,7 +22,7 @@ class SorceryCore < ActiveRecord::Migration
       add_index :users, :rh_id
       add_index :users, :role_id
       add_index :users, :type_user_id
-      add_index :users, :program_id
+     
   end
 
   def self.down
