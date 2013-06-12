@@ -1,19 +1,21 @@
 <tr id=<%= "responsible_#{responsible.id}" %>>
-  <td></td>
+  <td><%= responsible.id %></td>
   <td><%= responsible.name %></td>
   <td><%= responsible.surname %></td>
   <td><%= responsible.extension %></td>
-  <td><%= responsible.document_id %></td>
+  <td><%= responsible.document.name %></td>
+  <td><%= responsible.identification %></td>
   <td><%= responsible.genre %></td>
-  <td><%= responsible.area_center_id %></td>
   <td><%= responsible.phone %></td>
   <td>
-    <%= link_to 'Mostrar', area_center_responsible_path(@area_center, responsible), :remote => true, :class => 'btn btn-mini' %>
-    <%= link_to 'Editar', edit_area_center_responsible_path(@area_center, responsible), :remote => true,
-        :class => 'btn btn-mini' %>
-    <%= link_to 'Eliminar', area_center_responsible_path(@area_center, responsible), 
-        :data => { :confirm => 'Esta Seguro?' },
-        :method => :delete, :remote => true, :class => 'btn btn-mini btn-danger' %>
+  <%= link_to  image_tag('mostrar.png'), responsible,     :remote => true, :class => 'btn btn-mini' %>
+
+    <%= link_to image_tag('editar1.png', :title => "Editar Equipos"), edit_responsible_path(responsible),  :remote => true,
+        :class => 'btn btn-mini'%>
+
+         <td><%= link_to image_tag('miembros.png', :tile => "Agregar Miembros"), responsible_area_centers_path(responsible) %></td>
+
+       
+       
   </td>
 </tr>
-  

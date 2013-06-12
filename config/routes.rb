@@ -8,10 +8,20 @@ Carsoft::Application.routes.draw do
   resources :suggestions
 
     resources :users do
+      get :autocomplete_center_name, :on => :collection
     resources :vehicles
     resources :teams
     resources :materials
     resources :modify_users
+  end
+
+
+  resources :responsibles do
+    resources :area_centers 
+  end
+
+  resources :area_centers do
+    resources :centers
   end
   
   get "activate" => 'activations#create'
@@ -46,14 +56,6 @@ Carsoft::Application.routes.draw do
   resources :parkings
 
   resources :porters
-
-  resources :centers do
-    resources :area_centers
-  end 
-
-  resources :area_centers do
-    resources :responsibles
-  end
 
   resources :programs
 

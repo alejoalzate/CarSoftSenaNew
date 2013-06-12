@@ -1,17 +1,17 @@
 <%- model_class = AreaCenter -%>
 <div class="page-header">
-  <h1>Area Center</h1>
+  <h1>Area Centro de <%= @responsible.name %></h1>
 </div>
 <table class="table table-striped">
   <thead>
     <tr>
       <th>id</th>
-      <th>name</th>
-      <th>extension</th>
-      <th>center_id</th>
-      <th>phone</th>
-      <th>specification</th>
-      <th>created_at</th>
+      <th>Nombre</th>
+      <th>Responsable</th>
+      <th>Extension</th>
+      <th>Telefono</th>
+      <th>Especificacion</th>
+      <th>Opciones</th>
       <th></th>
     </tr>
   </thead>
@@ -20,8 +20,8 @@
   </tbody>
   <tfoot>
     <tr>
-      <td><%= link_to image_tag("participantes.png"), new_center_area_center_path, :remote => true  %> </td>
-      <td><%= link_to image_tag("atras.png"), centers_path %></td>
+      <td><%= link_to image_tag("participantes.png"), new_responsible_area_center_path, :remote => true  %> </td>
+      <td><%= link_to image_tag("atras.png"), responsibles_path %></td>
     </tr>
   </tfoot>
 </table>

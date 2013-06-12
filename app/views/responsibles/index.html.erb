@@ -1,20 +1,19 @@
 <%- model_class = Responsible -%>
 <div class="page-header">
-  <h1>Responsible</h1>
+  <h1>Responsables</h1>
 </div>
 <table class="table table-striped">
   <thead>
     <tr>
       <th>id</th>
-      <th>name</th>
-      <th>surname</th>
-      <th>extension</th>
-      <th>document_id</th>
-      <th>identification</th>
-      <th>genre</th>
-      <th>area_center_id</th>
-      <th>phone</th>
-      <th>created_at</th>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Extension</th>
+      <th>Documento</th>
+      <th>Identificacion</th>
+      <th>Genero</th>
+      <th>Telefono</th>
+      <th>Opciones</th>
       <th></th>
     </tr>
   </thead>
@@ -23,8 +22,8 @@
   </tbody>
   <tfoot>
     <tr>
-      <td><%= link_to image_tag("participantes.png"), new_area_center_responsible_path, :remote => true  %> </td>
-      <td><%= link_to image_tag("atras.png"), area_centers_path %></td>
+      <td><%= link_to image_tag('nuevo.png', :tile  => "Mostrar Equipos"),  new_responsible_path,  :remote => true %></td>
+    </tr>
     </tr>
   </tfoot>
 </table>

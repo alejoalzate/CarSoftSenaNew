@@ -31,9 +31,7 @@
       </tbody>
       <tfoot>
         <tr>
-          <td><%= link_to 'Agregar', new_user_path, :class => "btn btn-primary", 
-        :remote => true if can? :create, User %></td>
-
+          <td><%= link_to image_tag('nuevo.png', :tile  => "Mostrar Equipos"),  new_user_path,  :remote => true %></td>
         </tr>
       </tfoot>
       <tfoot>

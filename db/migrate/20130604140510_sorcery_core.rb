@@ -9,11 +9,13 @@ class SorceryCore < ActiveRecord::Migration
       t.string :identification
       t.string :address_residence
       t.string :phone
+      t.string :center_name
       t.string :movil
       t.references :document
       t.references :rh
       t.references :role
       t.references :type_user
+      t.references :center
     
 
       t.timestamps

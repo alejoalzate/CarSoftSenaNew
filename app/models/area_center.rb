@@ -1,5 +1,5 @@
 class AreaCenter < ActiveRecord::Base
-  belongs_to :center
-  has_many :responsibles
-  attr_accessible :extension, :name, :phone, :specification, :center_id
+  has_many :centers
+  belongs_to :responsible
+  attr_accessible :extension, :name, :phone, :specification, :center_id,  :responsible_id
 end

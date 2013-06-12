@@ -10,13 +10,15 @@
 	    			<th>Id</th>
 	    			<th>Nombres</th>
 	    			<th>Codigos</th>
+	    			<th>Area Centro</th>
 	    		</tr>
 	    	</thead>
 	    	<tbody>
 	    		<tr class="success">
 				    <td><p><%= @center.id %></p></td>
 				    <td><p><%= @center.name %></p></td>
-				    <td><p><%= @center.code_id %></p></td>	    
+				    <td><p><%= @center.code %></p></td>	
+				    <td><p><%= @center.area_center.name %></p></td>	    
 	    		</tr>
 	    	</tbody>
 	    </table>

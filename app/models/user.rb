@@ -13,8 +13,25 @@ class User < ActiveRecord::Base
   
   attr_accessible :email, :password, :password_confirmation
   attr_accessible :address_residence, :gender
-  attr_accessible :identification, :movil, :name, :phone
+  attr_accessible :identification, :movil, :name, :phone, :avatar
   attr_accessible :document_id, :rh_id, :role_ids, :type_user_id, :role_id
+  
+
+  belongs_to :document
+  belongs_to :rh
+  belongs_to :role_id
+  belongs_to :type_user
+
+  belongs_to :center
+  attr_accessible :center_name
+
+
+
+  has_attached_file :avatar, styles: {
+    thumb: '100x100>',
+    square: '200x200#',
+    medium: '300x300>'
+  }
 
 
   validates_confirmation_of :password
@@ -23,11 +40,14 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :email
 
  
-  belongs_to :document
-  belongs_to :rh
-  belongs_to :role_id
-  belongs_to :type_user
   
+  def center_name
+    center.name if center
+  end
+
+  def  center_nombre=(nombre)
+    self.center = Center.find_or_create_by_nombre(name)  unless name.blank? 
+  end
 
   def self.search(search)
 		where("name like '%#{search}%' or identification like '%#{search}%' or address_residence like '%#{search}%'

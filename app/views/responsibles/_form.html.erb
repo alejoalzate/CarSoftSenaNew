@@ -1,4 +1,4 @@
-<%= simple_form_for([@area_center, @responsible], :html => { :class => 'form-horizontal' }, :remote => true)  do |f| %>
+<%= simple_form_for(@responsible, :html => { :class => 'form-horizontal' }, :remote => true)  do |f| %>
 
   <%= f.error_notification %>
   <%= display_base_errors @responsible %>
@@ -6,13 +6,13 @@
   <%= f.input :name %>
   <%= f.input :surname %>
   <%= f.input :extension %>
-  <%= f.input :document_id %>
+  <%= f.label :document_id, :label => "Documento",  :required => true %>
+            <%= f.collection_select :document_id , Document.all, :id, :name, :prompt => "Tipo Documentos"  %><br><br><br>
   <%= f.input :identification %>
-  <%= f.input :genre %>
-  <%= f.input :area_center_id %>
+  <%= f.input :genre, :as => :radio, :label => "Genero", :collection => [["Masculino", false], ["Femenino", true]] %>
   <%= f.input :phone %>
   <div class="form-actions">
     <%= f.submit "guardar", :class => 'btn btn-primary' %>
-    <%= link_to 'Atras', area_center_responsibles_path, :class => 'btn btn-small' %>
+    <a href="#" class="btn" onclick="$.lazybox.close()">Cerrar</a>
   </div>
 <% end %>

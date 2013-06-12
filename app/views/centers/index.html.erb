@@ -1,6 +1,6 @@
 <%- model_class = Center -%>
   <div class="page-header">
-    <h1>Centros</h1>
+    <h1>Centros de <%= @area_center.name %></h1>
   </div>
     <div class="navbar">
     <div class="navbar-inner">
@@ -21,6 +21,7 @@
             <th>id</th>
             <th>Nombres</th>
             <th>Codigos</th>
+            <th>Area Centros</th>
             <th>Acciones</th>
         </tr>
       </thead>
@@ -29,7 +30,11 @@
       </tbody>
       <tfoot>
         <tr>
-          <td><%= link_to image_tag('nuevo.png', :tile  => "Mostrar Equipos"),  new_center_path,  :remote => true %></td>
+               
+        <td><%= link_to image_tag("participantes.png"), new_area_center_center_path, :remote => true  %> </td>
+          <td><%= link_to image_tag("atras.png"), area_centers_path %></td>
+        </tr>
+
         </tr>
       </tfoot>
       <tfoot>

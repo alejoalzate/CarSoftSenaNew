@@ -25,3 +25,7 @@ gem 'mime-types', :require => 'mime/types'
 gem 'rails3-jquery-autocomplete'
 gem "less-rails"
 gem 'remotipart'
+
+group :development do
+  gem "better_errors"
+end

@@ -1,6 +1,6 @@
 class Responsible < ActiveRecord::Base
   belongs_to :document
-  belongs_to :area_center
+  has_many :area_centers
   has_many :users
   attr_accessible :extension, :genre, :identification, :name, :phone, :surname, :document_id, :area_center_id
 

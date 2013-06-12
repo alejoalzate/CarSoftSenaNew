@@ -11,19 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130605162531) do
+ActiveRecord::Schema.define(:version => 20130612020656) do
 
   create_table "area_centers", :force => true do |t|
     t.string   "name"
     t.string   "extension"
-    t.integer  "center_id"
+    t.integer  "responsible_id"
     t.string   "phone"
     t.string   "specification"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
-  add_index "area_centers", ["center_id"], :name => "index_area_centers_on_center_id"
+  add_index "area_centers", ["responsible_id"], :name => "index_area_centers_on_responsible_id"
 
   create_table "areas", :force => true do |t|
     t.string   "name"
@@ -72,12 +72,13 @@ ActiveRecord::Schema.define(:version => 20130605162531) do
 
   create_table "centers", :force => true do |t|
     t.string   "name"
-    t.integer  "code_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "code"
+    t.integer  "area_center_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
-  add_index "centers", ["code_id"], :name => "index_centers_on_code_id"
+  add_index "centers", ["area_center_id"], :name => "index_centers_on_area_center_id"
 
   create_table "documents", :force => true do |t|
     t.string   "name"
@@ -178,13 +179,11 @@ ActiveRecord::Schema.define(:version => 20130605162531) do
     t.integer  "document_id"
     t.string   "identification"
     t.boolean  "genre"
-    t.integer  "area_center_id"
     t.string   "phone"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
   end
 
-  add_index "responsibles", ["area_center_id"], :name => "index_responsibles_on_area_center_id"
   add_index "responsibles", ["document_id"], :name => "index_responsibles_on_document_id"
 
   create_table "rhs", :force => true do |t|
@@ -273,15 +272,21 @@ ActiveRecord::Schema.define(:version => 20130605162531) do
     t.string   "identification"
     t.string   "address_residence"
     t.string   "phone"
+    t.string   "center_name"
     t.string   "movil"
     t.integer  "document_id"
     t.integer  "rh_id"
     t.integer  "role_id"
     t.integer  "type_user_id"
+    t.integer  "center_id"
     t.datetime "created_at",                   :null => false
     t.datetime "updated_at",                   :null => false
     t.string   "remember_me_token"
     t.datetime "remember_me_token_expires_at"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   add_index "users", ["document_id"], :name => "index_users_on_document_id"

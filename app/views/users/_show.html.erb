@@ -9,6 +9,7 @@
 
         <p id="notice"><%= notice %></p>
 
+        <p><%= image_tag @user.avatar.url(:thumb) %></p>
         <table class="table table-striped table-condensed">
             <tr>
                <td><b class="pull-right">Nombre: </b></td>
@@ -39,8 +40,12 @@
                <td><%= @user.gender %></td>
             </tr>
             <tr>
+               <td><b class="pull-right">Centro: </b></td>
+               <td><%= @user.center %></td>
+            </tr>
+            <tr>
                <td><b class="pull-right">Rh: </b></td>
-               <td><%= @user.rh.name %></td>
+               <td><%= @user.rh_id %></td>
             </tr>
         </table>
 

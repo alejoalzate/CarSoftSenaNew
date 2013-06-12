@@ -1,15 +1,31 @@
 <%- model_class = Responsible -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
-</div>
-
-<div class='responsible'>
-  <p><%= @responsible.id %></p>
-  <p><%= @responsible.name %></p>
-  <p><%= @responsible.surname %></p>
-  <p><%= @responsible.extension %></p>
-  <p><%= @responsible.document_id %></p>
-  <p><%= @responsible.genre %></p>
-  <p><%= @responsible.area_center_id %></p>
-  <p><%= @responsible.phone %></p>
-</div>
+	<div class="page-header">
+  		<h1>Responsables</h1>
+		<table class="table table-bordered table-hover" >
+	    	<caption>
+	    		<h3>Informacion</h3>
+	    	</caption>
+	    	<thead>
+	    		<tr class="success">
+	    			<th>Id</th>
+	    			<th>Nombres</th>
+	    		    <th>Apellidos</th>
+	    		    <th>Extension</th>
+	    		    <th>Documento</th>
+	    		    <th>Genero</th>
+	    		    <th>Telefono</th>
+	    		</tr>
+	    	</thead>
+	    	<tbody>
+	    		<tr class="warning">
+				    <td><p><%= @responsible.id %></p></td>
+				    <td><p><%= @responsible.name %></p></td>
+				    <td><p><%= @responsible.surname %></p></td>
+				    <td><p><%= @responsible.extension %></p></td>
+				    <td><p><%= @responsible.document.name %></p></td>
+				    <td><p><%= @responsible.genre %></p></td>
+				    <td><p><%= @responsible.phone %></p></td>   
+	    		</tr>
+	    	</tbody>
+	    </table>
+	</div>

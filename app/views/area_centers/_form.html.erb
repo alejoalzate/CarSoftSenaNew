@@ -1,16 +1,17 @@
-<%= simple_form_for([@center, @area_center], :html => { :class => 'form-horizontal' }, :remote => true) do |f| %>
+<%= simple_form_for([@responsible, @area_center], :html => { :class => 'form-horizontal' }, :remote => true) do |f| %>
 
   <%= f.error_notification %>
   <%= display_base_errors @area_center %>
 
   <%= f.input :name %>
   <%= f.input :extension %>
-  <%= f.input :center_id %>
   <%= f.input :phone %>
   <%= f.input :specification %>
+  <%= f.label :responsible_id, :label => "Responsable",  :required => true %>
+            <%= f.collection_select :responsible_id , Responsible.all, :id, :name, :prompt => "Responsable"  %>
   <div class="form-actions">
     <%= f.submit "guardar", :class => 'btn btn-primary' %>
-    <%= link_to 'Atras', center_area_centers_path, :class => 'btn btn-small' %>
+    <a href="#" class="btn" onclick="$.lazybox.close()">Cerrar</a>
   </div>
 <% end %>
 

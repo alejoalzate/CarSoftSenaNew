@@ -8,7 +8,8 @@
   <%= f.input :genre %>
   <%= f.input :document_id %>
   <%= f.input :identification %>
-  <%= f.input :item_description %>
+  <p><%= f.label :item_description, :label => "Descripcion",  :required => true %>
+       <%= f.text_area :item_description, :rows => 3 %></p>
   <%= f.input :charge %>
   <%= f.input :phone %>
   <%= f.input :avatar %>
@@ -20,12 +21,13 @@
   <%= f.input :others %>
   <%= f.input :date %>
   <%= f.input :acceptance %>
-  <%= f.input :user_id %>
+  <%= f.label :user_id, :label => "Usuario",  :required => true %>
+            <%= f.collection_select :user_id , User.all, :id, :name, :prompt => "Seleccione Usuario"  %>
   <%= f.label :avatar %>
   <%= f.file_field :avatar %>
   <div class="form-actions">
     <%= f.submit "guardar", :class => 'btn btn-primary' %>
-    <%= link_to 'Atras', authorizations_path, :class => 'btn btn-small' %>
+    <a href="#" class="btn" onclick="$.lazybox.close()">Cerrar</a>
   </div>
 <% end %>
 

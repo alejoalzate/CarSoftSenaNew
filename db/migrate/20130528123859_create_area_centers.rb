@@ -3,12 +3,12 @@ class CreateAreaCenters < ActiveRecord::Migration
     create_table :area_centers do |t|
       t.string :name
       t.string :extension
-      t.references :center
+      t.references :responsible
       t.string :phone
       t.string :specification
 
       t.timestamps
     end
-    add_index :area_centers, :center_id
+    add_index :area_centers, :responsible_id
   end
 end

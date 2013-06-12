@@ -2,10 +2,11 @@ class CreateCenters < ActiveRecord::Migration
   def change
     create_table :centers do |t|
       t.string :name
-      t.references :code
+      t.string :code
+      t.references :area_center
 
       t.timestamps
     end
-    add_index :centers, :code_id
+    add_index :centers, :area_center_id
   end
 end
